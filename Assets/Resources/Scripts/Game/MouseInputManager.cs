@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MouseInputManager : MonoBehaviour
+public class MouseInputManager : Singleton<MouseInputManager>
 {
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private Transform _draggingObject;
@@ -8,8 +8,25 @@ public class MouseInputManager : MonoBehaviour
     private float _dragSmoothness = 50f;
     private Vector3 _targetPosition;
 
+    private int _adb;
+    private int _asd;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _adb = _asd;
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            _asd = 555;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log(_adb);
+        }
         if (HandleTouchInput()) return;
         HandleMouseInput();
         SmoothFollow();
