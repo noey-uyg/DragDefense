@@ -8,25 +8,13 @@ public class MouseInputManager : Singleton<MouseInputManager>
     private float _dragSmoothness = 50f;
     private Vector3 _targetPosition;
 
-    private int _adb;
-    private int _asd;
-
     protected override void Awake()
     {
         base.Awake();
-        _adb = _asd;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            _asd = 555;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log(_adb);
-        }
         if (HandleTouchInput()) return;
         HandleMouseInput();
         SmoothFollow();
