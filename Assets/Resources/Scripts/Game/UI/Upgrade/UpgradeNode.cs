@@ -8,6 +8,7 @@ public class UpgradeData
     public string Name;
     public string Description;
     public int level;
+    public int MaxLevel;
     public int[] cost;
     public int[] Value;
     public int connectID;
@@ -20,11 +21,6 @@ public class UpgradeNode : MonoBehaviour
     [SerializeField] private Image _nodeImage;
 
     public UpgradeData UpgradeData { get { return _upgradeData; } }
-
-    private void Start()
-    {
-        RefreshNodeStatus();
-    }
 
     public void RefreshNodeStatus()
     {
@@ -45,6 +41,8 @@ public class UpgradeNode : MonoBehaviour
 
     public void OnUpgradeClick()
     {
+        if (_upgradeData.level >= _upgradeData.MaxLevel) return;
+
         _upgradeData.level++;
         UpgradeManager.Instance.NotifyNodeCleared();
     }

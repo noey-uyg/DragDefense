@@ -8,6 +8,13 @@ public class ViewZoomHandler : MonoBehaviour, IScrollHandler
     [SerializeField] private float _minZoom = 0.5f;
     [SerializeField] private float _maxZoom = 1.5f;
 
+    private Vector3 _originalPosition;
+
+    private void Start()
+    {
+        _originalPosition = _content.position;
+    }
+
     public void OnScroll(PointerEventData eventData)
     {
         Vector3 mouseWorldPos;
@@ -27,5 +34,10 @@ public class ViewZoomHandler : MonoBehaviour, IScrollHandler
 
         Vector3 delta = mouseWorldPos - mouseWorldPosAfterZoom;
         _content.position -= delta;
+    }
+
+    public void OnResetView()
+    {
+        _content.position = _originalPosition;
     }
 }
