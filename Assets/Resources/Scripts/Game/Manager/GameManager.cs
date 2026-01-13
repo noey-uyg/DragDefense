@@ -6,8 +6,8 @@ public class GameManager : DontDestroySingleton<GameManager>
 {
     private GameState _state;
 
-    [SerializeField] private GameObject _center;
-    [SerializeField] private GameObject _circle;
+    [SerializeField] private Center _center;
+    [SerializeField] private Circle _circle;
     [SerializeField] private GameObject _titlePanel;
 
     public GameState CurrentState { get { return _state; } }
@@ -30,13 +30,16 @@ public class GameManager : DontDestroySingleton<GameManager>
         switch (_state)
         {
             case GameState.Playing:
-                _center.SetActive(true);
-                _circle.SetActive(true);
+                PlayerStat.RefreshStats();
+                _center.gameObject.SetActive(true);
+                _center.Init();
+                _circle.gameObject.SetActive(true);
+                _circle.Init();
                 _titlePanel.SetActive(false);
                 break;
             default:
-                _center.SetActive(false);
-                _circle.SetActive(false);
+                _center.gameObject.SetActive(false);
+                _circle.gameObject.SetActive(false);
                 _titlePanel.SetActive(true);
                 break;
 

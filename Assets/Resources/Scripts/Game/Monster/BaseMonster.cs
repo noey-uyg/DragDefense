@@ -12,7 +12,7 @@ public class BaseMonster : MonoBehaviour
     
     [SerializeField] protected int _rewardGold;
 
-    protected float _baseHP = 100;
+    protected float _baseHP = 5;
     protected float _baseAtk = 1;
     protected float _baseSpeed = 1;
 

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public static class PlayerStat
 {
@@ -53,11 +52,10 @@ public static class PlayerStat
             case UpgradeType.CircleAtkDelay: UpgradedAtkDelay[uniqueID] = value; break;
             case UpgradeType.CircleRadius: UpgradedRadius[uniqueID] = value; break;
         }
-
         RefreshStats();
     }
 
-    private static void RefreshStats()
+    public static void RefreshStats()
     {
         CurPlayTime = BasePlayTime + UpgradedPlayTime.Values.Sum();
         CurGoldGainPercent = BaseGoldGainPercent + UpgradedGoldGainPercent.Values.Sum();
