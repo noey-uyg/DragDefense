@@ -10,11 +10,10 @@ public class BaseMonster : MonoBehaviour
     [SerializeField] protected SpriteRenderer _spriteRenderer;
     [SerializeField] protected Transform _transform;
     
-    [SerializeField] protected int _rewardGold;
-
-    protected float _baseHP = 5;
-    protected float _baseAtk = 1;
-    protected float _baseSpeed = 1;
+    [SerializeField] protected int _rewardGold = 1;
+    [SerializeField] protected float _baseHP = 5;
+    [SerializeField] protected float _baseAtk = 1;
+    [SerializeField] protected float _baseSpeed = 1;
 
     private float _realHP;
     private float _realAtk;

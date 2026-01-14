@@ -19,7 +19,9 @@ public static class PlayerStat
     // [Game]
     public static float CurPlayTime;
     public static float CurGoldGainPercent;
-    public static int CurGold;
+    private static int _curGold;
+    public static int CurGold {get => _curGold; set { _curGold = value; OnGoldChanged?.Invoke(_curGold); } }
+    public static System.Action<int> OnGoldChanged;
     // [Center]
     public static float CurMaxHP;
     public static float CurDamageReduction;

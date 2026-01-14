@@ -33,7 +33,7 @@ public class Circle : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
-        return _timer >= DamageDleay;
+        return _timer >= _curDelay;
     }
 
     public void ResetTimer()
