@@ -1,24 +1,9 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
-[System.Serializable]
-public class NodeSaveData
-{
-    public int id;
-    public int level;
-}
-
-[System.Serializable]
-public class UpgradeSaveData
-{
-    public List<NodeSaveData> datas = new List<NodeSaveData>();
-}
 
 public class UpgradeManager : Singleton<UpgradeManager>
 {
     private List<UpgradeNode> _allNodes = new List<UpgradeNode>();
-    private const string SaveKey = "UpgradeSaveData";
 
     public void InitializeAllNodes(GameObject panel)
     {
@@ -30,7 +15,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 _allNodes.Add(node);
         }
 
-        LoadData();
+        LoadUpgradeData();
 
         NotifyNodeCleared();
     }
@@ -61,7 +46,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
         PlayerStat.UpdateContiribution(type, uniqueID, value);
     }
 
-    public void SaveData()
+    public void SaveUpgradeData()
     {
         UpgradeSaveData saveData = new UpgradeSaveData();
 
@@ -74,17 +59,14 @@ public class UpgradeManager : Singleton<UpgradeManager>
             });
         }
 
-        string json = JsonUtility.ToJson(saveData);
-        PlayerPrefs.SetString(SaveKey, json);
-        PlayerPrefs.Save();
+        DataManager.SaveUpgradeData(saveData);
     }
 
-    public void LoadData()
+    public void LoadUpgradeData()
     {
-        if (!PlayerPrefs.HasKey(SaveKey)) return;
+        UpgradeSaveData saveData = DataManager.LoadUpgradeData();
 
-        string json = PlayerPrefs.GetString(SaveKey);
-        UpgradeSaveData saveData = JsonUtility.FromJson<UpgradeSaveData>(json);
+        if (saveData == null) return;
 
         foreach (var v in saveData.datas)
         {
@@ -100,10 +82,5 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 }
             }
         }
-    }
-
-    public void ResetData()
-    {
-        PlayerPrefs.DeleteKey(SaveKey);
     }
 }

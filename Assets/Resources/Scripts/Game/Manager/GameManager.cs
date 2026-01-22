@@ -22,6 +22,7 @@ public class GameManager : DontDestroySingleton<GameManager>
 
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         DOTween.SetTweensCapacity(500, 50);
+        DataManager.LoadGoldData();
     }
 
     public void SetGameState(GameState state)
@@ -78,7 +79,7 @@ public class GameManager : DontDestroySingleton<GameManager>
         _mainHUD.gameObject.SetActive(false);
         float totalSurvivalTime = Time.time - _playStartTime;
         int earnedGold = PlayerStat.CurGold - _goldAtStart;
-
+        DataManager.SaveGoldData();
         PopupManager.Instance.ShowPopup<ResultPopup>(popup =>
         {
             popup.Init(earnedGold, totalSurvivalTime);

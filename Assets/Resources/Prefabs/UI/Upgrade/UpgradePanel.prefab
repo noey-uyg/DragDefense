@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
+  m_sharedMaterial: {fileID: -5571592025542048100, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -203,8 +203,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
+  m_sharedMaterial: {fileID: -5571592025542048100, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -339,8 +339,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 5076698587363858258, guid: 5d7a5489fcb67fb4c891b5b48f37b181, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -362,13 +362,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -378,10 +378,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -7065965708403725370, guid: d7867fb5033ff544da453535f6063936, type: 3}
+    m_PressedSprite: {fileID: -9139478091149896457, guid: 557c86208afe0a7459c4c2eed204b0ba, type: 3}
+    m_SelectedSprite: {fileID: 5076698587363858258, guid: 5d7a5489fcb67fb4c891b5b48f37b181, type: 3}
+    m_DisabledSprite: {fileID: 638705915423395171, guid: 452b807dce049d34db776c93e1907c73, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -405,6 +405,85 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2616864899635724361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6588176162981556758}
+  - component: {fileID: 3099423472432524187}
+  - component: {fileID: 4483926029435742628}
+  m_Layer: 5
+  m_Name: Gold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6588176162981556758
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616864899635724361}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1998331265203150184}
+  - {fileID: 3415837483788781967}
+  m_Father: {fileID: 3737461740922635813}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &3099423472432524187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616864899635724361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
+--- !u!114 &4483926029435742628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616864899635724361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 5
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &2919150922949989008
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3737461740922635813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -442,6 +521,7 @@ RectTransform:
   - {fileID: 113323272649000695}
   - {fileID: 1031667976974375341}
   - {fileID: 4539964203741990022}
+  - {fileID: 6588176162981556758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -578,8 +658,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 8445941028856071674, guid: b84980f08f533b445b41ce88a4636b83, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -601,13 +681,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -617,10 +697,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 3000396235305135063, guid: eef1a32eaf29f284e83410adf7c1c8b6, type: 3}
+    m_PressedSprite: {fileID: -6304366882914888420, guid: 4a823e0bc4c64044eb3f80fd8d35dc42, type: 3}
+    m_SelectedSprite: {fileID: 8445941028856071674, guid: b84980f08f533b445b41ce88a4636b83, type: 3}
+    m_DisabledSprite: {fileID: 638705915423395171, guid: 452b807dce049d34db776c93e1907c73, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -644,6 +724,102 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3926680273310727744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998331265203150184}
+  - component: {fileID: 8156129246860709390}
+  - component: {fileID: 416635720019997942}
+  - component: {fileID: 3379716107276975304}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1998331265203150184
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926680273310727744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6588176162981556758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &8156129246860709390
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926680273310727744}
+  m_CullTransparentMesh: 1
+--- !u!114 &416635720019997942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926680273310727744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -3735701147272787997, guid: df65a0df46f6dc04687bb5db74c11068, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3379716107276975304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3926680273310727744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 50
+  m_PreferredHeight: 50
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4938307158387495540
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,8 +887,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2406157564482292258, guid: 6934016d28359d04a8541aa714488927, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -734,13 +910,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -750,10 +926,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -984880815182372632, guid: 4d450abbfe5394442b052ab2bd349233, type: 3}
+    m_PressedSprite: {fileID: -6209321317370671344, guid: 1ad1e4ec8425f8a47af439710b85b514, type: 3}
+    m_SelectedSprite: {fileID: -2406157564482292258, guid: 6934016d28359d04a8541aa714488927, type: 3}
+    m_DisabledSprite: {fileID: 638705915423395171, guid: 452b807dce049d34db776c93e1907c73, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -777,6 +953,142 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &6601053506534689009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3415837483788781967}
+  - component: {fileID: 8184538530483274733}
+  - component: {fileID: 1979142655601482898}
+  m_Layer: 5
+  m_Name: GoldText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3415837483788781967
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601053506534689009}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6588176162981556758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &8184538530483274733
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601053506534689009}
+  m_CullTransparentMesh: 1
+--- !u!114 &1979142655601482898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601053506534689009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
+  m_sharedMaterial: {fileID: -5571592025542048100, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6605520004351219785
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b209f9c2b8447324ea291c48005027e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0693931fc8077e1459f8fa05740d682c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1064,8 +1376,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
+  m_sharedMaterial: {fileID: -5571592025542048100, guid: b633915a7eab00342a258e5c2f50a75f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1177,18 +1489,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 8623379274214025772}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1004
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -1303,18 +1639,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 7730833974677115413}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 3012
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 301
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -1433,18 +1793,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 7055731116671848417}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1003
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -1559,21 +1943,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 6727245181696141442}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 3011
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _upgradeData.Name
+      value: CircleDamage
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 301
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _upgradeData.Description
+      value: Increases the attack power of all attacks by (<color=#FFD700>+{0}</color>)
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.cost.Array.size
@@ -1603,6 +2023,10 @@ PrefabInstance:
       propertyPath: '_upgradeData.Value.Array.data[5]'
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5219745506655660491, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3765440045627780741, guid: fdfc68272c33cb640a6e5b4fa8d824b1, type: 3}
     - target: {fileID: 8677603672962122253, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1701,18 +2125,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 5093022551268619024}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1007
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -1827,18 +2275,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 5132892724379997108}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1006
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -1953,18 +2425,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 1962265965542322216}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1005
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -2079,18 +2575,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 1047276549175357449}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1002
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1
@@ -2107,6 +2631,10 @@ PrefabInstance:
       propertyPath: _upgradeData.Value.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5219745506655660491, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
     - target: {fileID: 8677603672962122253, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2205,18 +2733,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5904963440767425453}
     m_Modifications:
+    - target: {fileID: 2003230602418260198, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: m_Name
       value: UpgradeNode
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 417265220108748192}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockSprite
+      value: 
+      objectReference: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _normalSprite
+      value: 
+      objectReference: {fileID: -4848319154898879857, guid: fe854bc6a17426f4eae5077e5399fd67, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.ID
       value: 1008
       objectReference: {fileID: 0}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _highlightSprite
+      value: 
+      objectReference: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.Type
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
+      propertyPath: _lockHighlightSprite
+      value: 
+      objectReference: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
     - target: {fileID: 5077857907410857321, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 1

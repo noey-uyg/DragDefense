@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterData
   monsterID: 1000
   sprite: {fileID: 21300000, guid: 8ff5851d96e353540b1e6d34f6dafe7b, type: 3}
-  rewardGold: 111
+  rewardGold: 1
   baseHP: 5
   baseAtk: 1
   baseSpeed: 1

@@ -17,7 +17,8 @@ public class TitlePanel : MonoBehaviour
 
     public void ExitButtonClick()
     {
-        UpgradeManager.Instance.SaveData();
+        UpgradeManager.Instance.SaveUpgradeData();
+        DataManager.SaveGoldData();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

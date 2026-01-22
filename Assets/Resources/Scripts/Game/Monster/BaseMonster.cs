@@ -147,7 +147,7 @@ public class BaseMonster : MonoBehaviour
     {
         Vector3 targetPos = MainHUD.Instance.GoldIconWorldPosition;
 
-        int count = Math.Max(7, Random.Range(0, (int)PlayerStat.CurMonsterLevel));
+        int count = Math.Max(1, Random.Range(0, (int)PlayerStat.CurMonsterLevel));
 
         for(int i = 0; i < count; i++)
         {
