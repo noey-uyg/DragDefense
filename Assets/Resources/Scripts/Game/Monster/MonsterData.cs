@@ -5,6 +5,7 @@ public class MonsterData : ScriptableObject
 {
     public int monsterID;
     public Sprite sprite;
+    public int monsterLevel;
 
     public int rewardGold;
     public float baseHP;

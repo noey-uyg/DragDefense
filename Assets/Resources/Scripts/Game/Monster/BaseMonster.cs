@@ -64,6 +64,7 @@ public class BaseMonster : MonoBehaviour
         _monsterID = data.monsterID;
         _spriteRenderer.sprite = data.sprite;
         _spriteRenderer.material = _originMaterial;
+        _spriteRenderer.sortingOrder = data.monsterLevel;
 
         _transform.localScale = new Vector3(data.baseScale, data.baseScale, 1);
         _visualRadius = _spriteRenderer.bounds.extents.x;
