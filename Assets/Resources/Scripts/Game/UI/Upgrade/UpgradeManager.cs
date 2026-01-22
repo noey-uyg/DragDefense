@@ -44,6 +44,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     public void ApplyUpgrade(UpgradeType type, int uniqueID, float value)
     {
         PlayerStat.UpdateContiribution(type, uniqueID, value);
+        DataManager.SaveGoldData();
     }
 
     public void SaveUpgradeData()

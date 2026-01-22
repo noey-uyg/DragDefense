@@ -68,7 +68,6 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         UpgradeManager.Instance.ApplyUpgrade(_upgradeData.Type, _upgradeData.ID, bonusValue);
         UpgradeManager.Instance.SaveUpgradeData();
         UpgradeManager.Instance.NotifyNodeCleared();
-        DataManager.SaveGoldData();
         OnPointerEnter(null);
     }
 

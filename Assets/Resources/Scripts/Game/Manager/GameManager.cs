@@ -62,12 +62,16 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         MonsterManager.Instance.ClearAllMonsters();
         PlayerStat.RefreshStats();
+
         _center.gameObject.SetActive(true);
         _center.Init();
+
         _circle.gameObject.SetActive(true);
         _circle.Init();
+
         _titlePanel.gameObject.SetActive(false);
         _mainHUD.gameObject.SetActive(true);
+
         _playStartTime = Time.time;
         _goldAtStart = PlayerStat.CurGold;
     }
@@ -75,11 +79,15 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnGameOver()
     {
         MonsterManager.Instance.ClearAllMonsters();
+
         _circle.gameObject.SetActive(false);
         _mainHUD.gameObject.SetActive(false);
-        float totalSurvivalTime = Time.time - _playStartTime;
+
+        float totalSurvivalTime = Mathf.Min(Time.time - _playStartTime, PlayerStat.CurPlayTime);
         int earnedGold = PlayerStat.CurGold - _goldAtStart;
+
         DataManager.SaveGoldData();
+
         PopupManager.Instance.ShowPopup<ResultPopup>(popup =>
         {
             popup.Init(earnedGold, totalSurvivalTime);
@@ -89,6 +97,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnLobby()
     {
         MonsterManager.Instance.ClearAllMonsters();
+
         _center.gameObject.SetActive(false);
         _circle.gameObject.SetActive(false);
         _mainHUD.gameObject.SetActive(false);

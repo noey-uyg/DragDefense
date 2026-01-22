@@ -44,7 +44,9 @@ public class EffectUIPool : Singleton<EffectUIPool>
     public T Get<T>() where T : EffectUI
     {
         Type type = typeof(T);
+        
         if(!_pools.ContainsKey(type)) return null;
+        if (_pools[type].CountInactive > _maxSize) return null;
 
         return _pools[type].Get() as T;
     }

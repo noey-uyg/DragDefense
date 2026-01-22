@@ -66,7 +66,7 @@ public class EffectPool : Singleton<EffectPool>
         var pool = _pools[type];
         var entry = _effectEntries.Find(x => x.type == type);
 
-        if (pool.CountInactive >= entry.maxSize) return CreateEffect(entry.prefab);
+        if (pool.CountInactive > entry.maxSize) return null;
 
         return pool.Get();
     }
