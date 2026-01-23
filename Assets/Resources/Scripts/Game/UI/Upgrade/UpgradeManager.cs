@@ -41,10 +41,16 @@ public class UpgradeManager : Singleton<UpgradeManager>
         }
     }
 
-    public void ApplyUpgrade(UpgradeType type, int uniqueID, float value)
+    public void ApplyUpgrade(UpgradeType type, int uniqueID, float value, int level)
     {
-        PlayerStat.UpdateContiribution(type, uniqueID, value);
-        DataManager.SaveGoldData();
+        if((int)type > 1000)
+        {
+            SkillStat.UpdateSkillContribution(type, uniqueID, value, level);
+        }
+        else
+        {
+            PlayerStat.UpdateContiribution(type, uniqueID, value);
+        }
     }
 
     public void SaveUpgradeData()
@@ -79,7 +85,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
                 if (v.level > 0)
                 {
                     float val = target.UpgradeData.Value[v.level];
-                    ApplyUpgrade(target.UpgradeData.Type, target.UpgradeData.ID, val);
+                    ApplyUpgrade(target.UpgradeData.Type, target.UpgradeData.ID, val, v.level);
                 }
             }
         }

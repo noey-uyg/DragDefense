@@ -1180,6 +1180,7 @@ MonoBehaviour:
   _center: {fileID: 1472806846}
   _circle: {fileID: 18999949}
   _titlePanel: {fileID: 152640980}
+  _upgradePanel: {fileID: 1877093300}
   _mainHUD: {fileID: 883070276}
 --- !u!1 &255350295
 GameObject:
@@ -6015,6 +6016,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1877093300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8893911109984849578, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+  m_PrefabInstance: {fileID: 1877093295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573040679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622275ad412a189479122a20385cdb2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradePanel
 --- !u!1 &1880965096
 GameObject:
   m_ObjectHideFlags: 0

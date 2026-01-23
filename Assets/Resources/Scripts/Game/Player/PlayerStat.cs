@@ -7,17 +7,17 @@ public static class PlayerStat
 {
     // [초기 수치]
     // [Game]
-    private const float BasePlayTime = 100000f;
+    private const float BasePlayTime = 10f;
     private const float BaseGoldGainPercent = 1f;
-    private const float BaseSpawnTime = 0.1f;
-    private const float BaseMonsterLevel = 6;
+    private const float BaseSpawnTime = 1.5f;
+    private const float BaseMonsterLevel = 0;
     // [Center]
     private const float BaseHP = 20f;
     private const float BaseDamageReduction = 0f;
     // [Circle]
     private const float BaseAtk = 1f;
-    private const float BaseAtkDelay = 0.15f;
-    private const float BaseRadius = 1f;
+    private const float BaseAtkDelay = 1.5f;
+    private const float BaseRadius = 0.25f;
     private const float BaseCritical = 0f;
 
     // [현재 수치]

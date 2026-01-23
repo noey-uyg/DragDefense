@@ -17,11 +17,6 @@ public class UpgradePanel : MonoBehaviour
         PlayerStat.OnGoldChanged -= UpdateGoldUI;
     }
 
-    private void Start()
-    {
-        UpgradeManager.Instance.InitializeAllNodes(this.gameObject);
-    }
-
     public void OnClickStart()
     {
         gameObject.SetActive(false);

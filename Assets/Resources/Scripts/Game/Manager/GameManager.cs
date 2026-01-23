@@ -9,6 +9,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     [SerializeField] private Center _center;
     [SerializeField] private Circle _circle;
     [SerializeField] private TitlePanel _titlePanel;
+    [SerializeField] private UpgradePanel _upgradePanel;
     [SerializeField] private MainHUD _mainHUD;
 
     private float _playStartTime;
@@ -23,6 +24,11 @@ public class GameManager : DontDestroySingleton<GameManager>
 
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         DOTween.SetTweensCapacity(500, 50);
+    }
+
+    private void Start()
+    {
+        UpgradeManager.Instance.InitializeAllNodes(_upgradePanel.gameObject);
         DataManager.LoadGoldData();
     }
 

@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,7 +16,7 @@ public class UpgradeData
     [Header("Status")]
     public int level;
     public int MaxLevel;
-    public int[] cost;
+    public BigInteger[] cost;
     public float[] Value;
 
     [Header("Connection")]
@@ -24,6 +26,8 @@ public class UpgradeData
 public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private UpgradeData _upgradeData;
+
+    [Header("Node Set")]
     [SerializeField] private Button _nodeButton;
     [SerializeField] private Image _nodeImage;
     [SerializeField] private Transform _transform;
@@ -65,9 +69,10 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         UpdateNodeImage();
 
-        UpgradeManager.Instance.ApplyUpgrade(_upgradeData.Type, _upgradeData.ID, bonusValue);
-        UpgradeManager.Instance.SaveUpgradeData();
+        UpgradeManager.Instance.ApplyUpgrade(_upgradeData.Type, _upgradeData.ID, bonusValue, _upgradeData.level);
         UpgradeManager.Instance.NotifyNodeCleared();
+        DataManager.SaveGoldData();
+        UpgradeManager.Instance.SaveUpgradeData();
         OnPointerEnter(null);
     }
 
@@ -78,7 +83,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         bool isMax = _upgradeData.level >= _upgradeData.MaxLevel;
 
-        int cost = isMax ? 0 : _upgradeData.cost[_upgradeData.level];
+        BigInteger cost = isMax ? 0 : _upgradeData.cost[_upgradeData.level];
         string costStr = isMax ? "<color=red>(Max)</color>" : cost.ToString();
 
         string finalDesc = _upgradeData.Description;

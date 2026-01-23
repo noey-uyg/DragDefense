@@ -19,6 +19,10 @@ public enum UpgradeType
     CircleAtkDelay = 302,
     CircleRadius = 303,
     CircleCiritical = 304,
+    SkillChainLightning = 1001,
+    SkillDeathBlast = 1002,
+    SkillOrbital = 1003,
+    SkillLaser = 1004,
 }
 
 public enum EffectType
