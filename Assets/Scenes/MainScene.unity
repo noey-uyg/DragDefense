@@ -6211,6 +6211,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 184347582}
     m_Modifications:
     - target: {fileID: 4229137471423827, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229137471423827, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Gold Earned
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229137471423827, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
       value: 102
       objectReference: {fileID: 0}
@@ -6281,6 +6289,14 @@ PrefabInstance:
     - target: {fileID: 315797756186237359, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 579495367516244993, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1003
+      objectReference: {fileID: 0}
+    - target: {fileID: 579495367516244993, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Attack Range
       objectReference: {fileID: 0}
     - target: {fileID: 579495367516244993, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
@@ -6375,6 +6391,14 @@ PrefabInstance:
       value: 0.30980393
       objectReference: {fileID: 0}
     - target: {fileID: 1793957225964673075, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1008
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793957225964673075, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Recovery Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793957225964673075, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
       value: 306
       objectReference: {fileID: 0}
@@ -6467,6 +6491,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2637872484055078764, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637872484055078764, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Max Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637872484055078764, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
       value: 201
       objectReference: {fileID: 0}
@@ -6505,6 +6537,14 @@ PrefabInstance:
     - target: {fileID: 2919150922949989008, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026337095630353636, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026337095630353636, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Attack Speed
       objectReference: {fileID: 0}
     - target: {fileID: 3026337095630353636, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
@@ -6587,12 +6627,20 @@ PrefabInstance:
       value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3503108047492357997, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503108047492357997, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _lines.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3503108047492357997, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Critical Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503108047492357997, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
-      value: 305
+      value: 304
       objectReference: {fileID: 0}
     - target: {fileID: 3503108047492357997, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: '_lines.Array.data[0]'
@@ -6775,6 +6823,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5010845757147789470, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1009
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010845757147789470, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Defense
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010845757147789470, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.Type
       value: 202
       objectReference: {fileID: 0}
@@ -6843,6 +6899,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6171408126102241191, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.ID
+      value: 1005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171408126102241191, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Play Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171408126102241191, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.MaxLevel
       value: 5
       objectReference: {fileID: 0}
@@ -6909,6 +6973,10 @@ PrefabInstance:
     - target: {fileID: 7155902692477192166, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: _upgradeData.ID
       value: 30101
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155902692477192166, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: _upgradeData.Name
+      value: Attack Power
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5298324644624954669, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}

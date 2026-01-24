@@ -42,6 +42,7 @@ public class Circle : MonoBehaviour
         float diameter = _curRadius * 2f;
         _baseScale = new Vector3(diameter, diameter, 1f);
         _transform.localScale = _baseScale;
+        _sr.color = _baseColor;
 
         _timer = 0f;
     }
@@ -62,7 +63,7 @@ public class Circle : MonoBehaviour
     {
         int baseAtk = Mathf.RoundToInt(PlayerStat.CurAtk);
         bool isCri = Random.Range(0f, 100f) <= PlayerStat.CurCritical;
-
+        Debug.Log($"{baseAtk}, {PlayerStat.CurAtk}");
         if (isCri)
         {
             int criDam = Mathf.RoundToInt(baseAtk * PlayerStat.CurCriticalDam);

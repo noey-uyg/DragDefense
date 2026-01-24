@@ -26,9 +26,12 @@ public class UpgradeData
 
     public BigInteger GetCurrentCost()
     {
-        if (level >= MaxLevel || string.IsNullOrEmpty(cost[level])) return 0;
+        if (level >= MaxLevel) return 0;
 
-        return BigInteger.Parse(cost[level]);
+        int nextLevel = level + 1;
+        if(nextLevel > MaxLevel || string.IsNullOrEmpty(cost[nextLevel])) return 0;
+
+        return BigInteger.Parse(cost[nextLevel]);
     }
 }
 
@@ -90,9 +93,8 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (PlayerStat.CurGold < curCost) return;
 
         PlayerStat.CurGold -= curCost;
-
-        float bonusValue = _upgradeData.Value[_upgradeData.level];
         _upgradeData.level++;
+        float bonusValue = _upgradeData.Value[_upgradeData.level];
 
         UpdateNodeImage();
 
