@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 18999946}
   _sr: {fileID: 18999945}
+  _baseColor: {r: 1, g: 1, b: 1, a: 1}
   _attackColor: {r: 0.15686275, g: 1, b: 0.5647059, a: 1}
 --- !u!1 &65100370
 GameObject:
@@ -1192,6 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255350296}
   - component: {fileID: 255350297}
+  - component: {fileID: 255350298}
   m_Layer: 0
   m_Name: UpgradeManager
   m_TagString: Untagged
@@ -1228,6 +1230,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
   _nodePrefab: {fileID: 4762234306997891477, guid: 69d3864ff2ff3ed4f8d551a9eb112a09, type: 3}
   _contentParent: {fileID: 1646041485}
+  _upgradeTreeConnector: {fileID: 255350298}
+--- !u!114 &255350298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255350295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1867450f8f872e645998c29a256c8c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeTreeConnector
+  _linePrefab: {fileID: 8840847476681076863, guid: 0703296b328d9584fbe2181a5acbdc94, type: 3}
+  _parent: {fileID: 1877093297}
 --- !u!1 &259429877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,6 +5944,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 2301040881616855293, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: m_Name
+      value: Lines
+      objectReference: {fileID: 0}
     - target: {fileID: 2919150922949989008, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_Name
       value: UpgradePanel
@@ -6043,6 +6064,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 79.270004
       objectReference: {fileID: 0}
+    - target: {fileID: 8146814308140601739, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+      propertyPath: m_Name
+      value: Nodes
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6051,6 +6076,11 @@ PrefabInstance:
 --- !u!224 &1877093296 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3737461740922635813, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
+  m_PrefabInstance: {fileID: 1877093295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1877093297 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8852203218123936359, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
   m_PrefabInstance: {fileID: 1877093295}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1877093300 stripped

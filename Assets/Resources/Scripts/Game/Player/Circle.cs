@@ -7,7 +7,7 @@ public class Circle : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
     [SerializeField] private SpriteRenderer _sr;
-
+    [SerializeField] private Color _baseColor;
     [SerializeField] private Color _attackColor;
 
     // 모션 시간
@@ -20,18 +20,12 @@ public class Circle : MonoBehaviour
     private float _timer = 0f;
 
     private Vector3 _baseScale;
-    private Color _baseColor;
     private Coroutine _motionCoroutine;
 
     public float Radius { get { return _curRadius; } }
     public int AtkDamage { get { return _curAtk; } }
     public float DamageDleay { get { return _curDelay; } }
     public Transform GetTransform {  get { return _transform; } }
-
-    private void Start()
-    {
-        _baseColor = _sr.color;
-    }
 
     public void Init()
     {
@@ -63,7 +57,7 @@ public class Circle : MonoBehaviour
     {
         int baseAtk = Mathf.RoundToInt(PlayerStat.CurAtk);
         bool isCri = Random.Range(0f, 100f) <= PlayerStat.CurCritical;
-        Debug.Log($"{baseAtk}, {PlayerStat.CurAtk}");
+
         if (isCri)
         {
             int criDam = Mathf.RoundToInt(baseAtk * PlayerStat.CurCriticalDam);

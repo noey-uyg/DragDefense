@@ -78,18 +78,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         gameObject.SetActive(active);
         UpdateNodeImage();
-        //SetActivateLine(active);
     }
-
-    //private void SetActivateLine(bool active)
-    //{
-    //    if (_lines == null || _lines.Length == 0) return;
-
-    //    for(int i=0;i<_lines.Length;i++)
-    //    {
-    //        _lines[i].SetActive(active);
-    //    }
-    //}
 
     public void OnUpgradeClick()
     {

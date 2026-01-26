@@ -88,6 +88,7 @@ public class BaseMonster : MonoBehaviour
     {
         _realHP -= dam;
         ApplyVampire();
+        ShowDamageText(dam, isCritical);
         if (_realHP <= 0)
         {
             Die(true);
@@ -95,7 +96,6 @@ public class BaseMonster : MonoBehaviour
         }
 
         PlayHitFlash();
-        ShowDamageText(dam, isCritical);
     }
 
     private void ShowDamageText(float dam, bool isCritical = false)
@@ -104,7 +104,7 @@ public class BaseMonster : MonoBehaviour
 
         if (te != null)
         {
-            Color finalColor = isCritical ? Color.orange : Color.yellow;
+            Color finalColor = isCritical ? Color.greenYellow : Color.yellow;
 
             te.Show(Mathf.RoundToInt(dam).ToString(), _transform.position, finalColor);
         }

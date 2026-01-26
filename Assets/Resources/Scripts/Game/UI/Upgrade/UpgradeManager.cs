@@ -5,15 +5,18 @@ public class UpgradeManager : Singleton<UpgradeManager>
 {
     [SerializeField] private GameObject _nodePrefab;
     [SerializeField] private Transform _contentParent;
+    [SerializeField] private UpgradeTreeConnector _upgradeTreeConnector;
     private float _gridScale = 150f;
 
     private List<UpgradeNode> _allNodes = new List<UpgradeNode>();
+    private List<UpgradeData> _allNodeDatas = new List<UpgradeData>();
 
     public void InitializeAllNodes()
     {
         _allNodes.Clear();
+        _allNodeDatas.Clear();
 
-        foreach(var v in CSVParser.UpgradeDataDict)
+        foreach (var v in CSVParser.UpgradeDataDict)
         {
             UpgradeData data = v.Value;
 
@@ -25,11 +28,13 @@ public class UpgradeManager : Singleton<UpgradeManager>
             RectTransform rect = go.GetComponent<RectTransform>();
             rect.anchoredPosition = new Vector2(data.GridX * _gridScale, data.GridY * _gridScale);
 
+            _upgradeTreeConnector.SetNodeRect(data.ID, rect);
+
             _allNodes.Add(node);
         }
 
+        _upgradeTreeConnector.CreateAllConnection(_allNodes);
         LoadUpgradeData();
-
         NotifyNodeCleared();
     }
 
