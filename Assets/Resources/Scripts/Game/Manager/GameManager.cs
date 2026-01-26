@@ -24,11 +24,12 @@ public class GameManager : DontDestroySingleton<GameManager>
 
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         DOTween.SetTweensCapacity(500, 50);
+        CSVParser.AllCSVLoad();
     }
 
     private void Start()
     {
-        UpgradeManager.Instance.InitializeAllNodes(_upgradePanel.gameObject);
+        UpgradeManager.Instance.InitializeAllNodes();
         DataManager.LoadGoldData();
     }
 

@@ -3,16 +3,29 @@ using UnityEngine;
 
 public class UpgradeManager : Singleton<UpgradeManager>
 {
+    [SerializeField] private GameObject _nodePrefab;
+    [SerializeField] private Transform _contentParent;
+    private float _gridScale = 150f;
+
     private List<UpgradeNode> _allNodes = new List<UpgradeNode>();
 
-    public void InitializeAllNodes(GameObject panel)
+    public void InitializeAllNodes()
     {
-        UpgradeNode[] nodes = panel.GetComponentsInChildren<UpgradeNode>();
+        _allNodes.Clear();
 
-        foreach (UpgradeNode node in nodes)
+        foreach(var v in CSVParser.UpgradeDataDict)
         {
-            if(!_allNodes.Contains(node))
-                _allNodes.Add(node);
+            UpgradeData data = v.Value;
+
+            GameObject go = Instantiate(_nodePrefab, _contentParent);
+            UpgradeNode node = go.GetComponent<UpgradeNode>();
+
+            node.SetData(data);
+
+            RectTransform rect = go.GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector2(data.GridX * _gridScale, data.GridY * _gridScale);
+
+            _allNodes.Add(node);
         }
 
         LoadUpgradeData();

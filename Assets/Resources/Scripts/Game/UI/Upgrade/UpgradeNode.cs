@@ -13,6 +13,8 @@ public class UpgradeData
     public int ID;
     public string Name;
     [TextArea(3, 5)] public string Description;
+    public float GridX;
+    public float GridY;
 
     [Header("Status")]
     public int level;
@@ -43,7 +45,6 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] private Button _nodeButton;
     [SerializeField] private Image _nodeImage;
     [SerializeField] private Transform _transform;
-    [SerializeField] private GameObject[] _lines;
 
     [Header("Sprites")]
     [SerializeField] private Sprite _normalSprite;
@@ -54,6 +55,12 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private bool _isHover = false;
 
     public UpgradeData UpgradeData { get { return _upgradeData; } }
+
+    public void SetData(UpgradeData data)
+    {
+        _upgradeData = data;
+        gameObject.name = $"Node_{data.ID}";
+    }
 
     public void RefreshNodeStatus()
     {
@@ -71,18 +78,18 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         gameObject.SetActive(active);
         UpdateNodeImage();
-        SetActivateLine(active);
+        //SetActivateLine(active);
     }
 
-    private void SetActivateLine(bool active)
-    {
-        if (_lines == null || _lines.Length == 0) return;
+    //private void SetActivateLine(bool active)
+    //{
+    //    if (_lines == null || _lines.Length == 0) return;
 
-        for(int i=0;i<_lines.Length;i++)
-        {
-            _lines[i].SetActive(active);
-        }
-    }
+    //    for(int i=0;i<_lines.Length;i++)
+    //    {
+    //        _lines[i].SetActive(active);
+    //    }
+    //}
 
     public void OnUpgradeClick()
     {
