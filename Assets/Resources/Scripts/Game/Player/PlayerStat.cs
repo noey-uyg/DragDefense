@@ -97,7 +97,7 @@ public static class PlayerStat
 
         CurMaxHP = BaseHP + UpgradedHP.Values.Sum();
         CurDamageReduction = BaseDamageReduction + UpgradedDefense.Values.Sum();
-        _curGold = 9999999999999999;
+        //_curGold = 9999999999999999;
 
         CurAtk = BaseAtk + UpgradedAtk.Values.Sum();
         CurAtkDelay = BaseAtkDelay + UpgradedAtkDelay.Values.Sum();

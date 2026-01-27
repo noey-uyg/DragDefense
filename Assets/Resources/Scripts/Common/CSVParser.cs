@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class CSVParser
 {
-    private const string UpgradeDataPath = "CSV/UpgradeData";
+    private const string UpgradeDataPath = "CSV/UpgradeTest";
 
     public static Dictionary<int, UpgradeData> UpgradeDataDict = new Dictionary<int, UpgradeData>();
 
@@ -51,32 +51,23 @@ public static class CSVParser
             data.Description = values[3];
 
             data.MaxLevel = int.Parse(values[4]);
-            data.GridX = float.Parse(values[9]);
-            data.GridY = float.Parse(values[10]);
-            data.cost = new string[data.MaxLevel + 1];
-            data.Value = new float[data.MaxLevel + 1];
-            data.connectID = int.Parse(values[11]);
-            data.connectMax = int.Parse(values[12]) > 0;
 
-            BigInteger baseCost = BigInteger.Parse(values[5]);
-            float costMult = float.Parse(values[6]);
-            float baseValue = float.Parse(values[7]);
-            float valueSum = float.Parse(values[8]);
-
-            for (int x = 1; x <= data.MaxLevel; x++)
+            data.cost = new string[data.MaxLevel + 1]; // values[5]부터 [9]까지
+            for(int x = 0; x < data.MaxLevel; x++)
             {
-                data.Value[x] = baseValue + ((x - 1) * valueSum);
-                if (x == 1)
-                {
-                    data.cost[x] = baseCost.ToString();
-                }
-                else
-                {
-                    double mult = Mathf.Pow(costMult, x - 1);
-                    BigInteger calcCost = new BigInteger((double)baseCost * mult);
-                    data.cost[x] = calcCost.ToString();
-                }
+                data.cost[x+1] = values[5 + x];
             }
+
+            data.Value = new float[data.MaxLevel + 1]; // values[10]부터 [14]까지
+            for (int x = 0; x < data.MaxLevel; x++)
+            {
+                data.Value[x+1] = float.Parse(values[10 + x]);
+            }
+
+            data.GridX = float.Parse(values[15]);
+            data.GridY = float.Parse(values[16]);
+            data.connectID = int.Parse(values[17]);
+            data.connectMax = int.Parse(values[18]) > 0;
 
             UpgradeDataDict.Add(data.ID, data);
         }

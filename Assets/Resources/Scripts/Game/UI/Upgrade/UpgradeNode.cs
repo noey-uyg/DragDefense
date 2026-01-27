@@ -59,7 +59,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void SetData(UpgradeData data)
     {
         _upgradeData = data;
-        gameObject.name = $"Node_{data.ID}";
+        gameObject.name = $"Node_{data.ID}({data.Type})";
     }
 
     public void RefreshNodeStatus()
