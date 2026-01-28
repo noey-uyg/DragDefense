@@ -56,6 +56,7 @@ public class Circle : MonoBehaviour
     public (int dam, bool isCri) GetCalcDamage()
     {
         int baseAtk = Mathf.RoundToInt(PlayerStat.CurAtk);
+        baseAtk = Mathf.Max(1,(int)(Random.Range(0.95f, 1.05f) * baseAtk));
         bool isCri = Random.Range(0f, 100f) <= PlayerStat.CurCritical;
 
         if (isCri)

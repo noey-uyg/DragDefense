@@ -18,7 +18,8 @@ public class TextEffect : EffectUI
             .SetAutoKill(true)
             .OnComplete(OnReleaseToPool);
 
-        _sequence.Join(_transform.DOMoveY(_transform.position.y + 0.5f, 0.2f).SetEase(Ease.OutQuart));
+        float tempY = _transform.position.y + Random.Range(0f, 0.8f);
+        _sequence.Join(_transform.DOMoveY(tempY, 0.2f).SetEase(Ease.OutQuart));
         _sequence.Join(_transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0), 0.2f));
         _sequence.AppendInterval(0.2f);
         _sequence.Append(_text.DOFade(0f, 0.2f));

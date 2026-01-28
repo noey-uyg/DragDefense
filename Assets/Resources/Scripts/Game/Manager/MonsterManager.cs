@@ -22,7 +22,13 @@ public class MonsterManager : Singleton<MonsterManager>
         bool canAttack = _circle.IsReady();
         float circleRadius = _circle.Radius;
 
-        if(canAttack) _circle.PlayAttackMotion();
+        SkillManager.Instance.ProcessSkillsCooldown();
+
+        if (canAttack)
+        {
+            _circle.PlayAttackMotion();
+            SkillManager.Instance.TryChainLightning();
+        }
 
         for (int i = _monsters.Count - 1; i >= 0; i--)
         {
@@ -34,11 +40,7 @@ public class MonsterManager : Singleton<MonsterManager>
             // 데미지 처리
             if (canAttack)
             {
-                float sqrDist = (circlePos - (Vector2)_monsters[i].GetTransform.position).sqrMagnitude;
-                float checkRadius = circleRadius + _monsters[i].VisualRadius;
-                float sqrCheckRadius = checkRadius * checkRadius;
-
-                if (sqrDist <= sqrCheckRadius)
+                if (IsMonsterInRange(_monsters[i], circlePos, circleRadius))
                 {
                     var (finalDam, isCritical) = _circle.GetCalcDamage();
                     _monsters[i].TakeDamage(finalDam, isCritical);
@@ -60,5 +62,41 @@ public class MonsterManager : Singleton<MonsterManager>
         }
 
         _monsters.Clear();
+    }
+
+    public List<BaseMonster> GetMonstersInChainLightningRange(float range)
+    {
+        List<BaseMonster> result = new List<BaseMonster>();
+        Vector2 circlePos = _circle.GetTransform.position;
+
+        for(int i=0;i< _monsters.Count; i++)
+        {
+            if (_monsters[i] == null) continue;
+
+            if (IsMonsterInRange(_monsters[i], circlePos, range))
+            {
+                result.Add(_monsters[i]);
+            }
+        }
+
+        return result;
+    }
+
+    private bool IsMonsterInRange(BaseMonster monster, Vector2 centerPos, float range)
+    {
+        if(monster == null) return false;
+
+        float sqrDist = (centerPos - (Vector2)monster.GetTransform.position).sqrMagnitude;
+        float checkRadius = range + monster.VisualRadius;
+        float sqrCheckRadius = checkRadius * checkRadius;
+
+        return sqrDist <= sqrCheckRadius;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_circle == null) return;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(_circle.GetTransform.position, _circle.Radius * 2f);
     }
 }

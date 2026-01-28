@@ -8,7 +8,7 @@ public static class PlayerStat
 {
     // [초기 수치]
     // [Game]
-    private const float BasePlayTime = 10f; // 게임 지속 시간 //최대 120
+    private const float BasePlayTime = 20f; // 게임 지속 시간 //최대 120
     private const float BaseGoldGainPercent = 1f; // 골드 획득량 배율 //최대 (10 = 1000%)
     private const float BaseSpawnTime = 1.5f; // 몬스터 스폰 시간 감소 //최대 0.25
     private const float BaseMonsterLevel = 0; // 등장 몬스터 레벨 증가 //최대 6

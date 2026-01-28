@@ -17,6 +17,7 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     public GameState CurrentState { get { return _state; } }
     public Center Center { get { return _center; } }
+    public Circle Circle { get { return _circle; } }
 
     protected override void OnAwake()
     {
@@ -76,6 +77,8 @@ public class GameManager : DontDestroySingleton<GameManager>
 
         _circle.gameObject.SetActive(true);
         _circle.Init();
+
+        SkillManager.Instance.Init();
 
         _titlePanel.gameObject.SetActive(false);
         _mainHUD.gameObject.SetActive(true);
