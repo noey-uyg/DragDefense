@@ -23,12 +23,15 @@ public class MonsterManager : Singleton<MonsterManager>
         float circleRadius = _circle.Radius;
 
         SkillManager.Instance.ProcessSkillsCooldown();
+        SkillManager.Instance.ProcessActiveBlastMove(dt);
 
         if (canAttack)
         {
             _circle.PlayAttackMotion();
-            SkillManager.Instance.TryChainLightning();
+            SkillManager.Instance.CircleAttackCheck();
         }
+
+        var activeBlasts = SkillManager.Instance.GetActiveBlasts();
 
         for (int i = _monsters.Count - 1; i >= 0; i--)
         {
@@ -44,6 +47,21 @@ public class MonsterManager : Singleton<MonsterManager>
                 {
                     var (finalDam, isCritical) = _circle.GetCalcDamage();
                     _monsters[i].TakeDamage(finalDam, isCritical);
+                }
+            }
+
+            // BlastShot Ã³¸®
+            for(int j = 0; j < activeBlasts.Count; j++)
+            {
+                var blast = activeBlasts[j];
+                int mId = _monsters[i].GetInstanceID();
+
+                if (blast.HasHit(mId)) continue;
+
+                if (IsMonsterInRange(_monsters[i], blast.GetTransform.position, blast.Radius))
+                {
+                    _monsters[i].TakeDamage(blast.Damage, blast.IsCritical);
+                    blast.AddHit(mId);
                 }
             }
         }
@@ -91,12 +109,5 @@ public class MonsterManager : Singleton<MonsterManager>
         float sqrCheckRadius = checkRadius * checkRadius;
 
         return sqrDist <= sqrCheckRadius;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (_circle == null) return;
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(_circle.GetTransform.position, _circle.Radius * 2f);
     }
 }
