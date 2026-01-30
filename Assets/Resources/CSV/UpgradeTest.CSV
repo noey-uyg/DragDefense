@@ -47,7 +47,6 @@
 304,143,CircleCritical,Increase Critical Chance by +{0}%,5,500000,785714,1375000,2750000,5500000,5,10,15,20,25,9,-1,122,0
 303,154,CircleRadius,Increase Attack Radius by +{0},5,545455,857143,1500000,3000000,6000000,0.3,0.35,0.4,0.45,0.5,9,1,122,0
 301,123,CircleAtk,Increase Attack by +{0},5,597958,939649,1644385,3288770,6577540,363,521,740,970,1400,7,2,142,0
-1004,149,SkillLaser,Unlock Skill Laser,1,120000,0,0,0,0,0,0,0,0,0,-6,3,111,0
 103,163,GameSpawnTime,Reduce Spawn Time by -{0}s,5,632993,994703,1740731,3481462,6962923,-0.05,-0.1,-0.15,-0.2,-0.25,7,-2,142,0
 105,168,GameGoldBonusChance,Increase Bonus Gold Chance by +{0}%,5,632993,994703,1740731,3481462,6962923,2,4,6,8,10,0,8,145,0
 202,155,CenterDefense,Increase Defense by +{0},5,636364,1000000,1750000,3500000,7000000,3,5,8,12,15,0,9,168,0
@@ -59,8 +58,7 @@
 305,151,CircleCriticalDam,Increase Critical Damage by +{0}x,5,1000000,1571429,2750000,5500000,11000000,2,2.25,2.5,3,3.5,-1,-4,148,0
 104,127,GameMonsterLevel,Increase Monster Level by +{0},1,1300000,0,0,0,0,1,0,0,0,0,0,-4,119,0
 306,156,CircleVampire,Increase Life Steal by +{0}%,5,1318182,2071429,3625000,7250000,14500000,3,3.5,4,4.5,5,0,-5,127,0
-1004,150,SkillLaser_Up,Laser Dmg Mult {0}x,1,1800000,0,0,0,0,1,0,0,0,0,1,-4,127,0
-1001,172,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,3200000,0,0,0,0,1,0,0,0,0,1,-5,150,0
+1001,172,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,3200000,0,0,0,0,1,0,0,0,0,1,-5,156,1
 1002,174,SkillDeathBlast_Up,DeathBlast Dmg Mult +{0}x,1,5500000,0,0,0,0,1,0,0,0,0,2,-5,172,0
 1003,176,SkillOrbital_Up,Orbital Dmg Mult +{0}x,1,7200000,0,0,0,0,1,0,0,0,0,2,-6,174,0
 101,135,GamePlayTime,Increase Play Time by +{0}s,5,12237843,19230897,33654069,67308139,134616277,5,10,15,20,25,1,-6,172,0
@@ -75,6 +73,4 @@
 104,131,GameMonsterLevel,Increase Monster Level by +{0},1,30000000,0,0,0,0,1,0,0,0,0,-6,-4,158,0
 1001,173,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,75000000,0,0,0,0,1,0,0,0,0,-6,-5,131,0
 1002,175,SkillDeathBlast_Up,DeathBlast Dmg Mult +{0}x,1,100000000,0,0,0,0,1.25,0,0,0,0,-7,-5,158,0
-1004,178,SkillLaser_Up,Laser Dmg Mult {0}x,1,120000000,0,0,0,0,1.25,0,0,0,0,-7,-6,175,0
 1003,177,SkillOrbital_Up,Orbital Dmg Mult +{0}x,1,180000000,0,0,0,0,1,0,0,0,0,-6,-6,173,0
-1004,179,SkillLaser_Up,Laser Dmg Mult {0}x,1,300000000,0,0,0,0,1.75,0,0,0,0,-7,-8,178,1

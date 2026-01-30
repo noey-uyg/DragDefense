@@ -1177,6 +1177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillPool
   _parent: {fileID: 230248429}
   _blastPrefab: {fileID: 6060776093842074643, guid: 168e1d49404b0464ebd75843fdcf2579, type: 3}
+  _orbitalPrefab: {fileID: 4995150081783010175, guid: 328ff18803bf7714a94f9f7c02bab6dd, type: 3}
 --- !u!1 &231114730
 GameObject:
   m_ObjectHideFlags: 0

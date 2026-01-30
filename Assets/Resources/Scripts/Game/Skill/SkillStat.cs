@@ -48,4 +48,14 @@ public static class SkillStat
     {
         return SkillLevels.TryGetValue(type, out var level) && level >= 1;
     }
+
+    public static int GetSkillLevel(UpgradeType type)
+    {
+        if(SkillLevels.TryGetValue(type, out var level))
+        {
+            return level;
+        }
+
+        return 0;
+    }
 }

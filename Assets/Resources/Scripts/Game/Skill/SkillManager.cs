@@ -12,13 +12,37 @@ public class SkillManager : Singleton<SkillManager>
     // [Blast]
     private List<BlastShot> _activeBlast = new List<BlastShot>();
     public List<BlastShot> GetActiveBlasts() => _activeBlast;
+    
     private int _blastAttackCount = 0;
     private const int _blastTriggetCount = 5;
+    // [Orbital]
+    private List<Orbital> _activeOrbitals = new List<Orbital>();
+    public List<Orbital> GetActiveOrbitals() => _activeOrbitals;
+
+    private float _orbitalSpeed;
+    private int _orbitalCount;
+    private float _orbitalAngle = 0f;
+    private float _baseRadius;
+    private const float _baseRotateSpeed = 90f;    
 
     public void Init()
     {
         _chainLightningTimer = 0f;
         _blastAttackCount = 0;
+        SyncOrbitalCount();
+    }
+
+    public void CleanUp()
+    {
+        ClearBlast();
+        ClearOrbitals();
+    }
+
+    public void SkillProcess(float dt)
+    {
+        ProcessSkillsCooldown();
+        ProcessActiveBlastMove(dt);
+        ProcessOrbitalRotation(dt);
     }
 
     public void ProcessSkillsCooldown()
@@ -86,7 +110,7 @@ public class SkillManager : Singleton<SkillManager>
 
     public void TryBlast()
     {
-        if (!SkillStat.IsUnlocked(UpgradeType.SkillDeathBlast)) return;
+        //if (!SkillStat.IsUnlocked(UpgradeType.SkillDeathBlast)) return;
 
         _blastAttackCount++;
 
@@ -128,6 +152,73 @@ public class SkillManager : Singleton<SkillManager>
                 _activeBlast.RemoveAt(i);
             }
         }
+    }
+
+    private void ClearBlast()
+    {
+        for (int i = _activeBlast.Count - 1; i >= 0; i--)
+        {
+            if (_activeBlast[i] != null)
+            {
+                SkillPool.Instance.ReleaseBlastShot(_activeBlast[i]);
+            }
+        }
+
+        _activeBlast.Clear();
+    }
+
+    #endregion
+
+    #region Orbital
+    public void ProcessOrbitalRotation(float dt)
+    {
+        if(!SkillStat.IsUnlocked(UpgradeType.SkillOrbital) || _activeOrbitals.Count == 0) return;
+
+        _orbitalAngle += _baseRotateSpeed * _orbitalSpeed * dt;
+
+        for(int i = 0; i < _activeOrbitals.Count; i++)
+        {
+            _activeOrbitals[i].SetPositionByAngle(_orbitalAngle, _baseRadius);
+        }
+    }
+
+    private void SyncOrbitalCount()
+    {
+        if (!SkillStat.IsUnlocked(UpgradeType.SkillOrbital)) return;
+
+        _baseRadius = PlayerStat.CurRadius + 1;
+        _orbitalCount = SkillStat.GetSkillLevel(UpgradeType.SkillOrbital) + 1;
+        _orbitalSpeed = PlayerStat.CalcCurAtkDelay;
+        _orbitalAngle = 0;
+
+        ClearOrbitals();
+
+        for(int i=0;i< _orbitalCount; i++)
+        {
+            var orbital = SkillPool.Instance.GetOrbital();
+
+            float startAngle = (360 / _orbitalCount) * i;
+
+            Vector2 startDir = new Vector2(
+                Mathf.Cos(startAngle * Mathf.Deg2Rad),
+                Mathf.Sin(startAngle * Mathf.Deg2Rad)
+                );
+
+            orbital.SetDirection(startDir);
+            orbital.SetPositionByAngle(_orbitalAngle, _baseRadius);
+
+            _activeOrbitals.Add(orbital);
+        }
+    }
+
+    private void ClearOrbitals()
+    {
+        for (int i = _activeOrbitals.Count - 1; i >= 0; i--)
+        {
+            SkillPool.Instance.ReleaseOrbital(_activeOrbitals[i]);
+        }
+
+        _activeOrbitals.Clear();
     }
 
     #endregion

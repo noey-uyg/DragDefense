@@ -41,6 +41,7 @@ public static class PlayerStat
     // [Circle]
     public static float CurAtk;
     public static float CurAtkDelay;
+    public static float CalcCurAtkDelay { get => BaseAtkDelay / CurAtkDelay; }
     public static float CurRadius;
     public static float CurCritical;
     public static float CurCriticalDam;

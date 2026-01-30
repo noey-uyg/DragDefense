@@ -22,8 +22,7 @@ public class MonsterManager : Singleton<MonsterManager>
         bool canAttack = _circle.IsReady();
         float circleRadius = _circle.Radius;
 
-        SkillManager.Instance.ProcessSkillsCooldown();
-        SkillManager.Instance.ProcessActiveBlastMove(dt);
+        SkillManager.Instance.SkillProcess(dt);
 
         if (canAttack)
         {
@@ -32,10 +31,13 @@ public class MonsterManager : Singleton<MonsterManager>
         }
 
         var activeBlasts = SkillManager.Instance.GetActiveBlasts();
+        var activeOrbitals = SkillManager.Instance.GetActiveOrbitals();
 
         for (int i = _monsters.Count - 1; i >= 0; i--)
         {
             if(i>=_monsters.Count || _monsters[i] == null) continue;
+
+            _monsters[i].UpdateOrbitalTimer(dt);
 
             // 이동
             _monsters[i].MoveToTarget(_targetPosition, dt);
@@ -62,6 +64,25 @@ public class MonsterManager : Singleton<MonsterManager>
                 {
                     _monsters[i].TakeDamage(blast.Damage, blast.IsCritical);
                     blast.AddHit(mId);
+                }
+            }
+
+            // Orbital 처리
+            if (_monsters[i].CanHitByOrbital())
+            {
+                for (int j = 0; j < activeOrbitals.Count; j++)
+                {
+                    var orbital = activeOrbitals[j];
+
+                    if (IsMonsterInRange(_monsters[i], orbital.GetTranform.position, orbital.Radius))
+                    {
+                        var (baseDam, iscri) = _circle.GetCalcDamage();
+
+                        int skillDam = Mathf.Max(1, Mathf.RoundToInt(baseDam * SkillStat.CurOrbitalMult));
+                        _monsters[i].TakeDamage(skillDam, iscri);
+
+                        _monsters[i].ResetOrbitalHitTimer();
+                    }
                 }
             }
         }

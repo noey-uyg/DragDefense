@@ -16,6 +16,9 @@ public class BaseMonster : MonoBehaviour
     private float _realSpeed;
     private float _rewardGold;
     private float _visualRadius;
+    private float _orbitalHitTimer = 0f;
+    private float _orbitalHitInterval = 0.5f;
+
     private Action<BaseMonster> _deadAction;
 
     [SerializeField] private Material _hitMaterial;
@@ -183,5 +186,17 @@ public class BaseMonster : MonoBehaviour
         {
             GameManager.Instance.Center.Heal(1);
         }
+    }
+
+    public void UpdateOrbitalTimer(float dt)
+    {
+        if (_orbitalHitTimer > 0) _orbitalHitTimer -= dt;
+    }
+
+    public bool CanHitByOrbital() => _orbitalHitTimer <= 0f;
+
+    public void ResetOrbitalHitTimer()
+    {
+        _orbitalHitTimer = _orbitalHitInterval;
     }
 }
