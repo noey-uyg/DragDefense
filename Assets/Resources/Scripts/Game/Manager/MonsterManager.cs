@@ -108,7 +108,7 @@ public class MonsterManager : Singleton<MonsterManager>
         _monsters.Clear();
     }
 
-    public List<BaseMonster> GetMonstersInChainLightningRange(float range)
+    public List<BaseMonster> GetMonstersInSlashRange(float range)
     {
         List<BaseMonster> result = new List<BaseMonster>();
         Vector2 circlePos = _circle.GetTransform.position;

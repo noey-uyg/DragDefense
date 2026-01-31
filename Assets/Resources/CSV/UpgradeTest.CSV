@@ -33,7 +33,7 @@
 102,114,GameGoldGain,Increase Gold Gain by +{0}%,5,7389,11612,20321,40641,81282,0.6,0.8,1.1,1.5,2,-9,0,138,0
 304,136,CircleCritical,Increase Critical Chance by +{0}%,5,9091,14286,25000,50000,100000,4,8,12,16,20,-9,-1,114,0
 302,132,CircleAtkDelay,Reduce Attack Delay by -{0}s,5,13636,21429,37500,75000,150000,-0.025,-0.05,-0.075,-0.1,-0.15,-8,-1,137,0
-1001,144,SkillChainLightning,Unlock Skill ChainLightning,1,15000,0,0,0,0,0,0,0,0,0,-3,-1,105,0
+1001,144,SkillSlash,Unlock Skill Slash,1,15000,0,0,0,0,0,0,0,0,0,-3,-1,105,0
 104,117,GameMonsterLevel,Increase Monster Level by +{0},1,20000,0,0,0,0,1,0,0,0,0,-7,-2,137,0
 303,141,CircleRadius,Increase Attack Radius by +{0},5,20000,31429,55000,110000,220000,0.1,0.15,0.2,0.25,0.3,-8,-2,132,0
 301,118,CircleAtk,Increase Attack by +{0},5,25754,40470,70823,141646,283291,100,140,200,280,400,-9,-2,141,0
@@ -41,7 +41,7 @@
 306,152,CircleVampire,Increase Life Steal by +{0}%,5,77273,121429,212500,425000,850000,1,1.5,2,2.5,3,8,0,142,0
 1002,145,SkillDeathBlast,Unlock Skill DeathBlast,1,50000,0,0,0,0,0,0,0,0,0,0,6,121,0
 1003,147,SkillOrbital,Unlock Skill Orbital,1,80000,0,0,0,0,0,0,0,0,0,5,-1,126,0
-1001,171,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,300000,0,0,0,0,1,0,0,0,0,5,1,126,0
+1001,171,SkillSlash_Up,Slash Dmg Mult +{0}x,1,300000,0,0,0,0,1,0,0,0,0,5,1,126,0
 302,140,CircleAtkDelay,Reduce Attack Delay by -{0}s,5,363636,571429,1000000,2000000,4000000,-0.2,-0.25,-0.3,-0.35,-0.4,8,-1,152,0
 104,122,GameMonsterLevel,Increase Monster Level by +{0},1,500000,0,0,0,0,1,0,0,0,0,9,0,152,0
 304,143,CircleCritical,Increase Critical Chance by +{0}%,5,500000,785714,1375000,2750000,5500000,5,10,15,20,25,9,-1,122,0
@@ -58,7 +58,7 @@
 305,151,CircleCriticalDam,Increase Critical Damage by +{0}x,5,1000000,1571429,2750000,5500000,11000000,2,2.25,2.5,3,3.5,-1,-4,148,0
 104,127,GameMonsterLevel,Increase Monster Level by +{0},1,1300000,0,0,0,0,1,0,0,0,0,0,-4,119,0
 306,156,CircleVampire,Increase Life Steal by +{0}%,5,1318182,2071429,3625000,7250000,14500000,3,3.5,4,4.5,5,0,-5,127,0
-1001,172,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,3200000,0,0,0,0,1,0,0,0,0,1,-5,156,1
+1001,172,SkillSlash_Up,Slash Dmg Mult +{0}x,1,3200000,0,0,0,0,1,0,0,0,0,1,-5,156,1
 1002,174,SkillDeathBlast_Up,DeathBlast Dmg Mult +{0}x,1,5500000,0,0,0,0,1,0,0,0,0,2,-5,172,0
 1003,176,SkillOrbital_Up,Orbital Dmg Mult +{0}x,1,7200000,0,0,0,0,1,0,0,0,0,2,-6,174,0
 101,135,GamePlayTime,Increase Play Time by +{0}s,5,12237843,19230897,33654069,67308139,134616277,5,10,15,20,25,1,-6,172,0
@@ -71,6 +71,6 @@
 301,128,CircleAtk,Increase Attack by +{0},5,26961595,42368220,74144385,148288770,296577540,1000,1737,2389,2828,3672,6,-6,164,0
 304,158,CircleCritical,Increase Critical Chance by +{0}%,5,27272727,42857143,75000000,150000000,300000000,6,12,18,24,30,-7,-4,117,1
 104,131,GameMonsterLevel,Increase Monster Level by +{0},1,30000000,0,0,0,0,1,0,0,0,0,-6,-4,158,0
-1001,173,SkillChainLightning_Up,ChainLightning Dmg Mult +{0}x,1,75000000,0,0,0,0,1,0,0,0,0,-6,-5,131,0
+1001,173,SkillSlash_Up,Slash Dmg Mult +{0}x,1,75000000,0,0,0,0,1,0,0,0,0,-6,-5,131,0
 1002,175,SkillDeathBlast_Up,DeathBlast Dmg Mult +{0}x,1,100000000,0,0,0,0,1.25,0,0,0,0,-7,-5,158,0
 1003,177,SkillOrbital_Up,Orbital Dmg Mult +{0}x,1,180000000,0,0,0,0,1,0,0,0,0,-6,-6,173,0

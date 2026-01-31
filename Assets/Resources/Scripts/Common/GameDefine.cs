@@ -30,7 +30,7 @@ public enum UpgradeType
     CircleVampire = 306,
 
     // [Skill] 1000 ~
-    SkillChainLightning = 1001,
+    SkillSlash = 1001,
     SkillDeathBlast = 1002,
     SkillOrbital = 1003,
     SkillLaser = 1004,
@@ -41,5 +41,5 @@ public enum EffectType
     CircleHit,
     CenterDam,
     MonsterDam,
-    LightningEffect,
+    SlashEffect,
 }
