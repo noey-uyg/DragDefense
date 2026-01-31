@@ -18,8 +18,8 @@ public static class PlayerStat
     private const float BaseDamageReduction = 0f; // 센터 방어력(적 데미지 - 방어력 = 최종 데미지) //최대 50
     // [Circle]
     private const float BaseAtk = 1f; // 공격력 //최대 5000+a
-    private const float BaseAtkDelay = 1.5f; // 공격 속도(감소될수록 빨라짐) //최대 0.2
-    private const float BaseRadius = 0.25f; // 공격 반경 증가 //최대 1.5
+    private const float BaseAtkDelay = 0.25f; // 공격 속도(감소될수록 빨라짐) //최대 0.2
+    private const float BaseRadius = 1.5f; // 공격 반경 증가 //최대 1.5
     private const float BaseCritical = 0f; // 크리티컬 확률 //최대 100
     private const float BaseCriticalDam = 1.5f; // 크리티컬 데미지 배율 //최대 (10 = 1000%)
     private const float BaseVampire = 0f; // 피흡 확률 (1씩 피흡) //최대 10

@@ -41,4 +41,5 @@ public enum EffectType
     CircleHit,
     CenterDam,
     MonsterDam,
+    LightningEffect,
 }

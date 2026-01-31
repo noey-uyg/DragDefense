@@ -7,7 +7,7 @@ public class SkillManager : Singleton<SkillManager>
 {
     // [CL]
     private float _chainLightningTimer = 0f;
-    private const float _chainLightningCooldown = 1f;
+    private float _chainLightningCooldown;
     private const int _maxChainCount = 10;
     // [Blast]
     private List<BlastShot> _activeBlast = new List<BlastShot>();
@@ -27,7 +27,7 @@ public class SkillManager : Singleton<SkillManager>
 
     public void Init()
     {
-        _chainLightningTimer = 0f;
+        InitLightning();
         _blastAttackCount = 0;
         SyncOrbitalCount();
     }
@@ -47,9 +47,10 @@ public class SkillManager : Singleton<SkillManager>
 
     public void ProcessSkillsCooldown()
     {
+        _chainLightningTimer += Time.deltaTime;
         if (SkillStat.IsUnlocked(UpgradeType.SkillChainLightning))
         {
-            _chainLightningTimer += Time.deltaTime;
+
         }
     }
 
@@ -63,13 +64,21 @@ public class SkillManager : Singleton<SkillManager>
     /// <summary>
     /// 기본 공격 시 발동
     /// </summary>
+    
+    private void InitLightning()
+    {
+        _chainLightningTimer = 0f;
+        _chainLightningCooldown = PlayerStat.CurAtkDelay;
+    }
+
     public void TryChainLightning()
     {
-        if (!SkillStat.IsUnlocked(UpgradeType.SkillChainLightning) || _chainLightningTimer < _chainLightningCooldown) return;
+        if (/*!SkillStat.IsUnlocked(UpgradeType.SkillChainLightning) || */_chainLightningTimer < _chainLightningCooldown) return;
 
         var circle = GameManager.Instance.Circle;
-        Vector2 circlePos = circle.GetTransform.position;
         float range = circle.Radius * 3;
+        Vector2 circlePos = circle.GetTransform.position;
+        Vector3 effectScale = new Vector3(range, range, 1);
 
         var targets = MonsterManager.Instance.GetMonstersInChainLightningRange(range)
             .OrderBy(x => ((Vector2)x.GetTransform.position - circlePos).sqrMagnitude)
@@ -78,14 +87,16 @@ public class SkillManager : Singleton<SkillManager>
 
         if(targets.Count > 0)
         {
-            CastLightning(targets);
+            CastLightning(targets, circlePos, effectScale);
         }
 
         ResetChainLightningTImer();
     }
 
-    private void CastLightning(List<BaseMonster> targets)
+    private void CastLightning(List<BaseMonster> targets, Vector2 circlePos, Vector3 effectScale)
     {
+        EffectManager.PlayEffect(EffectType.LightningEffect, circlePos, Quaternion.identity, effectScale);
+
         var (baseDam, isCri) = GameManager.Instance.Circle.GetCalcDamage();
         int skillDamage = Mathf.Max(1, Mathf.RoundToInt(baseDam * SkillStat.CurChainLightningMult));
 
@@ -110,7 +121,7 @@ public class SkillManager : Singleton<SkillManager>
 
     public void TryBlast()
     {
-        //if (!SkillStat.IsUnlocked(UpgradeType.SkillDeathBlast)) return;
+        if (!SkillStat.IsUnlocked(UpgradeType.SkillDeathBlast)) return;
 
         _blastAttackCount++;
 

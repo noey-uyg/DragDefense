@@ -35,56 +35,61 @@ public class MonsterManager : Singleton<MonsterManager>
 
         for (int i = _monsters.Count - 1; i >= 0; i--)
         {
-            if(i>=_monsters.Count || _monsters[i] == null) continue;
+            var monster = _monsters[i];
 
-            _monsters[i].UpdateOrbitalTimer(dt);
+            if(monster == null || !monster.gameObject.activeInHierarchy) continue;
+
+            monster.UpdateOrbitalTimer(dt);
 
             // 捞悼
-            _monsters[i].MoveToTarget(_targetPosition, dt);
+            monster.MoveToTarget(_targetPosition, dt);
 
             // 单固瘤 贸府
             if (canAttack)
             {
-                if (IsMonsterInRange(_monsters[i], circlePos, circleRadius))
+                if (IsMonsterInRange(monster, circlePos, circleRadius))
                 {
                     var (finalDam, isCritical) = _circle.GetCalcDamage();
-                    _monsters[i].TakeDamage(finalDam, isCritical);
+                    monster.TakeDamage(finalDam, isCritical);
                 }
             }
+            if (monster == null || !monster.gameObject.activeInHierarchy) continue;
 
             // BlastShot 贸府
-            for(int j = 0; j < activeBlasts.Count; j++)
+            for (int j = 0; j < activeBlasts.Count; j++)
             {
                 var blast = activeBlasts[j];
-                int mId = _monsters[i].GetInstanceID();
+                int mId = monster.GetInstanceID();
 
                 if (blast.HasHit(mId)) continue;
 
-                if (IsMonsterInRange(_monsters[i], blast.GetTransform.position, blast.Radius))
+                if (IsMonsterInRange(monster, blast.GetTransform.position, blast.Radius))
                 {
-                    _monsters[i].TakeDamage(blast.Damage, blast.IsCritical);
+                    monster.TakeDamage(blast.Damage, blast.IsCritical);
                     blast.AddHit(mId);
                 }
             }
+            if (monster == null || !monster.gameObject.activeInHierarchy) continue;
 
             // Orbital 贸府
-            if (_monsters[i].CanHitByOrbital())
+            if (monster.CanHitByOrbital())
             {
                 for (int j = 0; j < activeOrbitals.Count; j++)
                 {
                     var orbital = activeOrbitals[j];
 
-                    if (IsMonsterInRange(_monsters[i], orbital.GetTranform.position, orbital.Radius))
+                    if (IsMonsterInRange(monster, orbital.GetTranform.position, orbital.Radius))
                     {
                         var (baseDam, iscri) = _circle.GetCalcDamage();
 
                         int skillDam = Mathf.Max(1, Mathf.RoundToInt(baseDam * SkillStat.CurOrbitalMult));
-                        _monsters[i].TakeDamage(skillDam, iscri);
+                        monster.TakeDamage(skillDam, iscri);
 
-                        _monsters[i].ResetOrbitalHitTimer();
+                        monster.ResetOrbitalHitTimer();
                     }
                 }
             }
+            if (monster == null || !monster.gameObject.activeInHierarchy) continue;
         }
 
         if(canAttack) _circle.ResetTimer();
