@@ -196,7 +196,7 @@ public class SkillManager : Singleton<SkillManager>
     {
         if (!SkillStat.IsUnlocked(UpgradeType.SkillOrbital)) return;
 
-        _baseRadius = PlayerStat.CurRadius + 1;
+        _baseRadius = GameManager.Instance.Center.VisualRadius + 0.5f;
         _orbitalCount = SkillStat.GetSkillLevel(UpgradeType.SkillOrbital) + 1;
         _orbitalSpeed = PlayerStat.CalcCurAtkDelay;
         _orbitalAngle = 0;
