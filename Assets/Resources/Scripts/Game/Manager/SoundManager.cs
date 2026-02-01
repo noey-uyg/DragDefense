@@ -25,9 +25,11 @@ public class SoundManager : Singleton<SoundManager>
     private Dictionary<BGMType, AudioClip> _bgmClip = new Dictionary<BGMType, AudioClip>();
     private Dictionary<SFXType, AudioClip> _sfxClip = new Dictionary<SFXType, AudioClip>();
     private Dictionary<SFXType, float> _sfxCooldowns = new Dictionary<SFXType, float>();
-    private List<AudioSource> _sfxPool = new List<AudioSource>();
+    private Stack<AudioSource> _unusedSource = new Stack<AudioSource>();
+    private List<AudioSource> _activeSource = new List<AudioSource>();
 
     private int _initPoolSize = 20;
+    private int _maxPoolSIze = 50;
     private float _bgmVolume = 0.5f;
     private float _sfxVolume = 0.5f;
 
@@ -59,22 +61,57 @@ public class SoundManager : Singleton<SoundManager>
 
     private AudioSource CreateAudioSource()
     {
+        if (_unusedSource.Count + _activeSource.Count >= _maxPoolSIze) return null;
+
         var go = Instantiate(_sfxPlayerPrefab, transform);
-        AudioSource source= go.AddComponent<AudioSource>();
+        AudioSource source = go.GetComponent<AudioSource>();
+        if(source == null) source = go.AddComponent<AudioSource>();
         source.playOnAwake = false;
-        _sfxPool.Add(source);
+        _unusedSource.Push(source);
 
         return source;
     }
 
     private AudioSource GetAvailableSource()
     {
-        for(int i = 0; i < _sfxPool.Count; i++)
+        // 사용된 오디오 정리
+        for (int i = _activeSource.Count - 1; i >= 0; i--)
         {
-            if (!_sfxPool[i].isPlaying) return _sfxPool[i];
+            if (!_activeSource[i].isPlaying)
+            {
+                _unusedSource.Push(_activeSource[i]);
+                _activeSource.RemoveAt(i);
+            }
         }
 
-        return CreateAudioSource();
+        // 사용 가능 소스 반환
+        if(_unusedSource.Count > 0)
+        {
+            AudioSource source = _unusedSource.Pop();
+            _activeSource.Add(source);
+            return source;
+        }
+
+        // 사용 소스 없을 때 새로 생성
+        if(_unusedSource.Count + _activeSource.Count < _maxPoolSIze)
+        {
+            AudioSource source = CreateAudioSource();
+            if(source != null)
+            {
+                _unusedSource.Pop();
+                _activeSource.Add(source);
+                return source;
+            }
+        }
+
+        // 모두 사용되고 있을 때
+        AudioSource old = _activeSource[0];
+        old.Stop();
+
+        _activeSource.RemoveAt(0);
+        _activeSource.Add(old);
+
+        return old;
     }
 
     public void PlayBGM(BGMType type)
@@ -104,6 +141,8 @@ public class SoundManager : Singleton<SoundManager>
         }
 
         var source = GetAvailableSource();
+
+        if(source == null) return;
 
         source.clip = clip;
         source.volume = _sfxVolume;

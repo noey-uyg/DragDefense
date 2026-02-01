@@ -48,6 +48,7 @@ public enum BGMType
 {
     Main,
     Game,
+    GameBoss,
 }
 
 public enum SFXType
