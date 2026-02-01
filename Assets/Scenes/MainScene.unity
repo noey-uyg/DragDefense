@@ -4760,26 +4760,26 @@ MonoBehaviour:
   _sfxPlayerPrefab: {fileID: 6056778354772478086, guid: 14f0214e107d54d4d8f68cc849da93c2, type: 3}
   _bgmEntries:
   - type: 0
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: e8b0d2fc6df8a74498e557331c7f7146, type: 3}
   - type: 1
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: f75f2869fd5c11146920f6c37754be28, type: 3}
+  - type: 2
+    prefab: {fileID: 8300000, guid: b2954ca235d4e91478f65c541b01db96, type: 3}
   _sfxEntries:
   - type: 0
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: cad11a4481c77fe4aabeb5563cb0bd6c, type: 3}
   - type: 1
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
   - type: 2
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: 5e1a9f876d3dafd47bc6b3dde25135fa, type: 3}
   - type: 3
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
   - type: 4
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: 82ef6eaed5d940240a305b0266087f97, type: 3}
   - type: 5
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: 8b3f676fe7b41044495a2964396b8ba3, type: 3}
   - type: 6
-    prefab: {fileID: 0}
-  - type: 7
-    prefab: {fileID: 0}
+    prefab: {fileID: 8300000, guid: fa16bd6cbe8bcba40ad0f5c9644c9607, type: 3}
 --- !u!1 &1217098269
 GameObject:
   m_ObjectHideFlags: 0

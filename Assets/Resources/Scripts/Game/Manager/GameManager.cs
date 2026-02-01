@@ -32,6 +32,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         UpgradeManager.Instance.InitializeAllNodes();
         DataManager.LoadGoldData();
+        OnLobby();
     }
 
     public void SetGameState(GameState state)
@@ -64,6 +65,7 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     public void OnUpgradePanel()
     {
+        SoundManager.Instance.PlayBGM(BGMType.Main);
         _titlePanel.OnUpgradeButtonClick();
     }
 
@@ -71,6 +73,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         MonsterManager.Instance.ClearAllMonsters();
         PlayerStat.RefreshStats();
+        SoundManager.Instance.PlayBGM(BGMType.Game);
 
         _center.gameObject.SetActive(true);
         _center.Init();
@@ -109,6 +112,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnLobby()
     {
         MonsterManager.Instance.ClearAllMonsters();
+        SoundManager.Instance.PlayBGM(BGMType.Main);
 
         _center.gameObject.SetActive(false);
         _circle.gameObject.SetActive(false);

@@ -6,17 +6,20 @@ public class TitlePanel : MonoBehaviour
 
     public void OnStartButtonClick()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         GameManager.Instance.StartGame();
     }
 
     public void OnUpgradeButtonClick()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         _upgradePopup.SetActive(true);
         GameManager.Instance.SetGameState(GameState.Upgrade);
     }
 
     public void ExitButtonClick()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         UpgradeManager.Instance.SaveUpgradeData();
         DataManager.SaveGoldData();
 #if UNITY_EDITOR

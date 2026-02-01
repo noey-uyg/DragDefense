@@ -83,6 +83,8 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnUpgradeClick()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+
         if (_upgradeData.level >= _upgradeData.MaxLevel) return;
 
         BigInteger curCost = _upgradeData.GetCurrentCost();

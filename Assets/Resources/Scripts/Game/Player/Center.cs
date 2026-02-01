@@ -36,6 +36,8 @@ public class Center : MonoBehaviour
 
     public void TakeDamage(float monsterAtk)
     {
+        SoundManager.Instance.PlaySFX(SFXType.Evt_CenterHit);
+
         float fianlDamage = Mathf.Max(1f, monsterAtk - _defense);
         _currentHP -= fianlDamage;
 

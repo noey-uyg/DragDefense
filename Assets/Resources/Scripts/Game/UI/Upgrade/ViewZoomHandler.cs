@@ -39,6 +39,7 @@ public class ViewZoomHandler : MonoBehaviour, IScrollHandler
     public void OnResetView()
     {
         DataManager.ResetAll();
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         _content.position = _originalPosition;
     }
 }

@@ -95,6 +95,7 @@ public class SkillManager : Singleton<SkillManager>
 
     private void CastSlash(List<BaseMonster> targets, Vector2 circlePos, Vector3 effectScale)
     {
+        SoundManager.Instance.PlaySFX(SFXType.Atk_Slash);
         EffectManager.PlayEffect(EffectType.SlashEffect, circlePos, Quaternion.identity, effectScale);
 
         var (baseDam, isCri) = GameManager.Instance.Circle.GetCalcDamage();
@@ -134,6 +135,8 @@ public class SkillManager : Singleton<SkillManager>
 
     private void CastBlast()
     {
+        SoundManager.Instance.PlaySFX(SFXType.Atk_Blast);
+
         var circle = GameManager.Instance.Circle;
         Vector2 startPos = circle.GetTransform.position;
         var (baseDam, isCri) = circle.GetCalcDamage();

@@ -19,12 +19,14 @@ public class UpgradePanel : MonoBehaviour
 
     public void OnClickStart()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         gameObject.SetActive(false);
         GameManager.Instance.StartGame();
     }
 
     public void OnClickMain()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         gameObject.SetActive(false);
         GameManager.Instance.SetGameState(GameState.Lobby);
     }

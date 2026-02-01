@@ -22,6 +22,7 @@ public class ResultPopup : PopupBase
         _retryButton.onClick.RemoveAllListeners();
         _retryButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.StartGame();
         });
@@ -29,6 +30,7 @@ public class ResultPopup : PopupBase
         _upgradeButton.onClick.RemoveAllListeners();
         _upgradeButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.SetGameState(GameState.Upgrade);
             GameManager.Instance.OnUpgradePanel();
@@ -37,6 +39,7 @@ public class ResultPopup : PopupBase
         _mainButton.onClick.RemoveAllListeners();
         _mainButton.onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.SetGameState(GameState.Lobby);
         });

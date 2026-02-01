@@ -57,7 +57,6 @@ public enum SFXType
 
     Atk_Normal,
     Atk_Slash,
-    Atk_Orbital,
     Atk_Blast,
 
     Evt_MonsterHit,

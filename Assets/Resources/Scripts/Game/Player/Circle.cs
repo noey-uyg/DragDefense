@@ -71,8 +71,9 @@ public class Circle : MonoBehaviour
     public void PlayAttackMotion()
     {
         if (_motionCoroutine != null) StopCoroutine(_motionCoroutine);
-
         _motionCoroutine = StartCoroutine(IEAttackMotion());
+
+        SoundManager.Instance.PlaySFX(SFXType.Atk_Normal);
 
         Vector3 effectScale = new Vector3(_curRadius, _curRadius, 1);
         EffectManager.PlayEffect(EffectType.CircleHit, _transform.position, Quaternion.identity, effectScale);

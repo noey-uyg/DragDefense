@@ -46,6 +46,7 @@ public class MainHUD : Singleton<MainHUD>
 
     public void OnEndButtonClick()
     {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
         GameManager.Instance.SetGameState(GameState.GameOver);
     }
 

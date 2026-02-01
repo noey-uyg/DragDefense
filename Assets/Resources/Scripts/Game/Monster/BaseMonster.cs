@@ -89,6 +89,8 @@ public class BaseMonster : MonoBehaviour
 
     public void TakeDamage(float dam, bool isCritical = false)
     {
+        SoundManager.Instance.PlaySFX(SFXType.Evt_MonsterHit);
+
         _realHP -= dam;
         ApplyVampire();
         ShowDamageText(dam, isCritical);
@@ -144,6 +146,7 @@ public class BaseMonster : MonoBehaviour
 
         if (isKillByPlayer)
         {
+            SoundManager.Instance.PlaySFX(SFXType.Evt_MonsterDie);
             SpawnGoldFlyEffects();
             GetGold();
         }

@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: f75f2869fd5c11146920f6c37754be28
+timeCreated: 1500942006
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89763
+  packageName: Absolute Space & Sci-Fi vol.1
+  packageVersion: 1.0
+  assetPath: Assets/Absolute Space & Sci-Fi Vol.1 - Voltz Supreme/Suspense - 70 bpm/Variations/Suspense
+    - Full.wav
+  uploadId: 200229
