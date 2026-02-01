@@ -43,3 +43,23 @@ public enum EffectType
     MonsterDam,
     SlashEffect,
 }
+
+public enum BGMType
+{
+    Main,
+    Game,
+}
+
+public enum SFXType
+{
+    UI_ButtonClick,
+
+    Atk_Normal,
+    Atk_Slash,
+    Atk_Orbital,
+    Atk_Blast,
+
+    Evt_MonsterHit,
+    Evt_MonsterDie,
+    Evt_CenterHit,
+}
