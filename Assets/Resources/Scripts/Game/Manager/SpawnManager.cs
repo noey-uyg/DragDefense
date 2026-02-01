@@ -1,15 +1,22 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
 
 public class SpawnManager : Singleton<SpawnManager>
 {
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Transform _bossSpawnPoint;
     [SerializeField] private Transform _monsterTransform;
     [SerializeField] private List<MonsterData> _datas;
 
     private float _spawnTime = 0f;
+    private float _playTime = 0f;
+    private bool _hasBossSpawn;
+
+    private const float _bossAppearTime = 70f;
+    private const int _bossAppearLevel = 6;
 
     private readonly Dictionary<int, int[]> _weightTable = new Dictionary<int, int[]>()
     {
@@ -34,7 +41,13 @@ public class SpawnManager : Singleton<SpawnManager>
         if (GameManager.Instance.CurrentState != GameState.Playing)
             return;
 
+        _playTime += Time.deltaTime;
         _spawnTime += Time.deltaTime;
+
+        if(!_hasBossSpawn && _playTime >= _bossAppearTime && PlayerStat.CurMonsterLevel >= _bossAppearLevel)
+        {
+            SpawnBoss();
+        }
 
         if (_spawnTime > PlayerStat.CurSpawnTime)
         {
@@ -52,10 +65,33 @@ public class SpawnManager : Singleton<SpawnManager>
             MonsterData selectData = GetMonsterDataByLevel((int)PlayerStat.CurMonsterLevel);
 
             BaseMonster monster = MonsterPool.Instance.GetNormalMonster();
-            monster.Init(selectData);
             monster.GetTransform.position = _spawnPoints[Random.Range(0, _spawnPoints.Length)].position;
             monster.GetTransform.SetParent(_monsterTransform);
+            monster.Init(selectData);
         }
+    }
+
+    private void SpawnBoss()
+    {
+        _hasBossSpawn = true;
+
+        MonsterData bossData = _datas.Find(x => x.isBoss);
+
+        if(bossData != null)
+        {
+            SoundManager.Instance.PlayBGM(BGMType.GameBoss);
+
+            var boss = MonsterPool.Instance.GetBossMonster();
+            boss.GetTransform.position = _bossSpawnPoint.position;
+            boss.GetTransform.SetParent(_monsterTransform);
+            boss.Init(bossData);
+        }
+    }
+
+    public void ResetBossState()
+    {
+        _hasBossSpawn = false;
+        _playTime = 0;
     }
 
     private MonsterData GetMonsterDataByLevel(int level)

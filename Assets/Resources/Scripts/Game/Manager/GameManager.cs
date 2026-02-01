@@ -72,6 +72,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnPlaying()
     {
         MonsterManager.Instance.ClearAllMonsters();
+        SpawnManager.Instance.ResetBossState();
         PlayerStat.RefreshStats();
         SoundManager.Instance.PlayBGM(BGMType.Game);
 
@@ -93,6 +94,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     private void OnGameOver()
     {
         MonsterManager.Instance.ClearAllMonsters();
+        SpawnManager.Instance.ResetBossState();
         SkillManager.Instance.CleanUp();
 
         _circle.gameObject.SetActive(false);

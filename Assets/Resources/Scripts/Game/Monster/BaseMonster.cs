@@ -10,24 +10,25 @@ public class BaseMonster : MonoBehaviour
     [SerializeField] protected int _monsterID;
     [SerializeField] protected SpriteRenderer _spriteRenderer;
     [SerializeField] protected Transform _transform;
+    [SerializeField] protected Color _normalDamColor;
+    [SerializeField] protected Color _criticalDamColor;
+    [SerializeField] protected Material _hitMaterial;
+    [SerializeField] protected Material _originMaterial;
 
-    private float _realHP;
-    private float _realAtk;
-    private float _realSpeed;
-    private float _rewardGold;
-    private float _visualRadius;
-    private float _orbitalHitTimer = 0f;
-    private float _orbitalHitInterval = 0.5f;
+    protected float _realHP;
+    protected float _realAtk;
+    protected float _realSpeed;
+    protected float _rewardGold;
+    protected float _visualRadius;
+    protected float _orbitalHitTimer = 0f;
+    protected float _orbitalHitInterval = 0.5f;
 
-    private Action<BaseMonster> _deadAction;
+    protected MonsterData _monsterData;
+    protected Action<BaseMonster> _deadAction;
 
-    [SerializeField] private Material _hitMaterial;
-    [SerializeField] private Material _originMaterial;
-    private Coroutine _flashCoroutine;
-    private WaitForSeconds _fwfs = new WaitForSeconds(0.05f);
+    protected Coroutine _flashCoroutine;
+    protected WaitForSeconds _fwfs = new WaitForSeconds(0.05f);
 
-    [SerializeField] private Color _normalDamColor;
-    [SerializeField] private Color _criticalDamColor;
 
     public int MonsterID { get { return _monsterID; } }
     public Transform GetTransform { get { return _transform; } }
@@ -62,8 +63,9 @@ public class BaseMonster : MonoBehaviour
         _transform.position = nextPos;
     }
 
-    public void Init(MonsterData data)
+    public virtual void Init(MonsterData data)
     {
+        _monsterData = data;
         _monsterID = data.monsterID;
         _spriteRenderer.sprite = data.sprite;
         _spriteRenderer.material = _originMaterial;
@@ -118,7 +120,7 @@ public class BaseMonster : MonoBehaviour
         }
     }
 
-    private void AttackCenter()
+    protected virtual void AttackCenter()
     {
         GameManager.Instance.OnMonsterAttackCenter(_realAtk);
         Die(false);
@@ -140,7 +142,7 @@ public class BaseMonster : MonoBehaviour
         _flashCoroutine = null;
     }
 
-    public void Die(bool isKillByPlayer)
+    public virtual void Die(bool isKillByPlayer)
     {
         _deadAction?.Invoke(this);
 
@@ -155,7 +157,7 @@ public class BaseMonster : MonoBehaviour
         MonsterManager.Instance.Unregister(this);
     }
 
-    private void GetGold()
+    protected void GetGold()
     {
         int finalGold = Mathf.RoundToInt(_rewardGold * PlayerStat.CurGoldGainPercent);
 
@@ -169,7 +171,7 @@ public class BaseMonster : MonoBehaviour
         _deadAction = action;
     }
 
-    private void SpawnGoldFlyEffects()
+    protected void SpawnGoldFlyEffects()
     {
         Vector3 targetPos = MainHUD.Instance.GoldIconWorldPosition;
 
