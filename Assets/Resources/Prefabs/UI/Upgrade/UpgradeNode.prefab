@@ -169,3 +169,4 @@ MonoBehaviour:
   _highlightSprite: {fileID: 5729145674238113194, guid: 03202969c4c7d684cbafd22d426a0a31, type: 3}
   _lockSprite: {fileID: 463636535422671397, guid: 90587be43c161ab46b4f9bf2363ea40e, type: 3}
   _lockHighlightSprite: {fileID: -5264750370523526, guid: 9a1ccc890b7b68d4f9511f38a2290e59, type: 3}
+  _maxColor: {r: 0, g: 1, b: 0.42745098, a: 1}

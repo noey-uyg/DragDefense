@@ -51,6 +51,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] private Sprite _highlightSprite;
     [SerializeField] private Sprite _lockSprite;
     [SerializeField] private Sprite _lockHighlightSprite;
+    [SerializeField] private Color _maxColor;
 
     private bool _isHover = false;
 
@@ -147,8 +148,12 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private void UpdateNodeImage()
     {
         bool isLocked = _upgradeData.level == 0;
+        bool isMax = _upgradeData.level >= _upgradeData.MaxLevel;
 
         if (isLocked) _nodeImage.sprite = _isHover ? _lockHighlightSprite : _lockSprite;
         else _nodeImage.sprite = _isHover ? _highlightSprite : _normalSprite;
+
+        if (isMax) _nodeImage.color = _maxColor;
+        else _nodeImage.color = Color.white;
     }
 }
