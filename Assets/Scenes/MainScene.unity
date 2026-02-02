@@ -3381,6 +3381,7 @@ MonoBehaviour:
   _popupRoot: {fileID: 930300878}
   _popupPrefabs:
   - {fileID: 5509385694283381104, guid: f6eb22a2c512abf40a39f95824cb40f5, type: 3}
+  - {fileID: 7759172519515311828, guid: 1f7400e2e86877e4097100a1beed2698, type: 3}
 --- !u!114 &930300880
 MonoBehaviour:
   m_ObjectHideFlags: 0
