@@ -5065,6 +5065,7 @@ GameObject:
   - component: {fileID: 1274316558}
   - component: {fileID: 1274316560}
   - component: {fileID: 1274316559}
+  - component: {fileID: 1274316561}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5190,6 +5191,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274316557}
   m_CullTransparentMesh: 1
+--- !u!114 &1274316561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274316557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7040b45e79ae92243a79b85af1de8e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  _localizeKey: UPGRADE
+  _textMesh: {fileID: 1274316559}
 --- !u!1 &1274395961
 GameObject:
   m_ObjectHideFlags: 0
@@ -6472,61 +6487,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 184347582}
     m_Modifications:
-    - target: {fileID: 1998331265203150184, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998331265203150184, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998331265203150184, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998331265203150184, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998331265203150184, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2301040881616855293, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_Name
-      value: Lines
-      objectReference: {fileID: 0}
     - target: {fileID: 2919150922949989008, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_Name
       value: UpgradePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2919150922949989008, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 19.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 41.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 79.270004
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415837483788781967, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3737461740922635813, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_Pivot.x
@@ -6607,14 +6570,6 @@ PrefabInstance:
     - target: {fileID: 3737461740922635813, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6588176162981556758, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 79.270004
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146814308140601739, guid: f5e26ebb5aeb9224b810c609405cd561, type: 3}
-      propertyPath: m_Name
-      value: Nodes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6754,6 +6709,7 @@ GameObject:
   - component: {fileID: 1902923722}
   - component: {fileID: 1902923724}
   - component: {fileID: 1902923723}
+  - component: {fileID: 1902923725}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6879,6 +6835,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902923721}
   m_CullTransparentMesh: 1
+--- !u!114 &1902923725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902923721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7040b45e79ae92243a79b85af1de8e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  _localizeKey: QUIT
+  _textMesh: {fileID: 1902923723}
 --- !u!1 &1919807520
 GameObject:
   m_ObjectHideFlags: 0
@@ -7295,6 +7265,7 @@ GameObject:
   - component: {fileID: 2009407085}
   - component: {fileID: 2009407087}
   - component: {fileID: 2009407086}
+  - component: {fileID: 2009407088}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7420,6 +7391,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009407084}
   m_CullTransparentMesh: 1
+--- !u!114 &2009407088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009407084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7040b45e79ae92243a79b85af1de8e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  _localizeKey: END
+  _textMesh: {fileID: 2009407086}
 --- !u!1 &2030850256
 GameObject:
   m_ObjectHideFlags: 0

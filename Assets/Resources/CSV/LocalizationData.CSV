@@ -1,2 +1,18 @@
 ﻿KEY,KOR,ENG,JP
 START,시작,Start,開始
+UPGRADE,업그레이드,Upgrade,アップグレード
+QUIT,종료,Quit,終了
+BGM,배경음,BGM,BGM
+SFX,효과음,SFX,SE
+LANG,언어,Lang,言語
+SAVE_AND_EXIT,저장하고 나가기,SAVE AND EXIT,セーブして終了
+SETTING,설정,SETTING,設定
+MAIN,메인,Main,メイン
+RESET_VIEW,뷰 초기화,Reset View,視点リセット
+END,중단,End,中断
+RESULT,결과,RESULT,結果
+SURVIVAL_TIME,생존 시간,SURVIVAL TIME,生存時間
+EARNED_GOLD,획득 골드,EARNED GOLD,獲得ゴールド
+TOTAL_GOLD,총 골드,TOTAL GOLD,合計ゴールド
+RETRY,재시도,RETRY,リトライ
+MAIN_MENU,메인 메뉴,MAIN MENU,メインメニュー
