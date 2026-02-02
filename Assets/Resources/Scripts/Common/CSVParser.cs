@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class CSVParser
 {
-    private const string UpgradeDataPath = "CSV/UpgradeTest";
+    private const string UpgradeDataPath = "CSV/UpgradeData";
 
     public static Dictionary<int, UpgradeData> UpgradeDataDict = new Dictionary<int, UpgradeData>();
 
