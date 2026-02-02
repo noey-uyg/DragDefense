@@ -26,6 +26,7 @@ public class BackgroundScaler : MonoBehaviour
         scale.y = worldScreenHeight / spriteHeight;
 
         float maxScale = Mathf.Max(scale.x, scale.y);
+        maxScale *= 1.5f;
         scale = new Vector3(maxScale, maxScale, 1f);
 
         _transform.localScale = scale;

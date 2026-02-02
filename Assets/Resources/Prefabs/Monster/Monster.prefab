@@ -106,7 +106,7 @@ MonoBehaviour:
   _monsterID: 0
   _spriteRenderer: {fileID: 2842368533195914121}
   _transform: {fileID: 7081476932187002515}
-  _hitMaterial: {fileID: 2100000, guid: 07be19c4894163642ad666ceda66a253, type: 2}
-  _originMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   _normalDamColor: {r: 1, g: 0.89411765, b: 0, a: 1}
   _criticalDamColor: {r: 0, g: 1, b: 0.8, a: 1}
+  _hitMaterial: {fileID: 2100000, guid: 07be19c4894163642ad666ceda66a253, type: 2}
+  _originMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}

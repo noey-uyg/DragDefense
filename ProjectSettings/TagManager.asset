@@ -54,5 +54,8 @@ TagManager:
   - name: Line
     uniqueID: 1139601247
     locked: 0
+  - name: Effect
+    uniqueID: 1004490887
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -1,17 +1,20 @@
 using DG.Tweening;
 using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : DontDestroySingleton<GameManager>
 {
     private GameState _state;
 
+    [SerializeField] private Camera _mainCamera;
     [SerializeField] private Center _center;
     [SerializeField] private Circle _circle;
     [SerializeField] private TitlePanel _titlePanel;
     [SerializeField] private UpgradePanel _upgradePanel;
     [SerializeField] private MainHUD _mainHUD;
 
+    private Vector3 _camOriginPos;
     private float _playStartTime;
     private BigInteger _goldAtStart;
 
@@ -22,6 +25,9 @@ public class GameManager : DontDestroySingleton<GameManager>
     protected override void OnAwake()
     {
         base.OnAwake();
+
+        if(_mainCamera == null) _mainCamera = Camera.main;
+        _camOriginPos = _mainCamera.transform.position;
 
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         DOTween.SetTweensCapacity(500, 50);
@@ -60,6 +66,7 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     public void OnMonsterAttackCenter(float damage)
     {
+        ShakeCamera();
         _center.TakeDamage(damage);
     }
 
@@ -120,5 +127,16 @@ public class GameManager : DontDestroySingleton<GameManager>
         _circle.gameObject.SetActive(false);
         _mainHUD.gameObject.SetActive(false);
         _titlePanel.gameObject.SetActive(true);
+    }
+
+    public void ShakeCamera(float duration = 0.2f, float strength = 0.05f, int vivrato = 1)
+    {
+        if (_mainCamera == null) return;
+
+        _mainCamera.transform.DOKill();
+        _mainCamera.transform.position = _camOriginPos;
+
+        _mainCamera.transform.DOShakePosition(duration, strength, vivrato)
+            .OnComplete(()=>_mainCamera.transform.position = _camOriginPos);
     }
 }

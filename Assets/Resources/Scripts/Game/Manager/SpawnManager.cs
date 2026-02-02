@@ -77,7 +77,9 @@ public class SpawnManager : Singleton<SpawnManager>
 
         MonsterData bossData = _datas.Find(x => x.isBoss);
 
-        if(bossData != null)
+        EffectManager.PlayEffect(EffectType.BossSpawn, new Vector2(0, 3), Quaternion.identity, new Vector3(1.5f,1.5f,1.5f));
+
+        if (bossData != null)
         {
             SoundManager.Instance.PlayBGM(BGMType.GameBoss);
 

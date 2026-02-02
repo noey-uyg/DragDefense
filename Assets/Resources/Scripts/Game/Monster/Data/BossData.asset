@@ -17,7 +17,7 @@ MonoBehaviour:
   monsterLevel: 6
   rewardGold: 10000000
   baseHP: 13000000
-  baseAtk: 20000
+  baseAtk: 570
   baseSpeed: 1
   baseScale: 0.2
   isBoss: 1

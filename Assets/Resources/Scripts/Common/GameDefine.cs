@@ -42,6 +42,7 @@ public enum EffectType
     CenterDam,
     MonsterDam,
     SlashEffect,
+    BossSpawn,
 }
 
 public enum BGMType
