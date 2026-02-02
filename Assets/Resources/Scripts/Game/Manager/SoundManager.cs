@@ -35,6 +35,9 @@ public class SoundManager : Singleton<SoundManager>
 
     private const float _minSfxInterval = 0.05f;
 
+    public float BGMVolume { get { return _bgmVolume; } }
+    public float SFXVolume { get { return _sfxVolume; } }
+
     protected override void OnAwake()
     {
         base.OnAwake();

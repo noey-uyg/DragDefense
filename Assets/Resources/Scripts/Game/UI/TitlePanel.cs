@@ -17,6 +17,15 @@ public class TitlePanel : MonoBehaviour
         GameManager.Instance.SetGameState(GameState.Upgrade);
     }
 
+    public void OnSettingButtonClick()
+    {
+        SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+        PopupManager.Instance.ShowPopup<SettingPopup>(popup =>
+        {
+            popup.Init();
+        });
+    }
+
     public void ExitButtonClick()
     {
         SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
