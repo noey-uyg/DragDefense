@@ -36,6 +36,7 @@ public class SettingPopup : PopupBase
         _saveButton.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            DataManager.SaveSoundData(_bgmSlider.value, _sfxSlider.value);
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.SetGameState(GameState.Lobby);
         });

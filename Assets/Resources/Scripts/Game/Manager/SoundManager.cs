@@ -165,4 +165,11 @@ public class SoundManager : Singleton<SoundManager>
     {
         _sfxVolume = Mathf.Clamp01(vol);
     }
+
+    public void SetVolume(float bgm, float sfx)
+    {
+        _bgmVolume = Mathf.Clamp01(bgm);
+        _bgmPlayer.volume = _bgmVolume;
+        _sfxVolume = Mathf.Clamp01(sfx);
+    }
 }

@@ -19,6 +19,8 @@ public static class DataManager
 {
     private const string UpgradeSaveKey = "Upgrade_Save_Key";
     private const string GoldSaveKey = "Gold_Save_Key";
+    private const string BGMSaveKey = "BGM_Save_Key";
+    private const string SFXSaveKey = "SFX_Save_Key";
 
     #region 업그레이드 데이터
     public static void SaveUpgradeData(UpgradeSaveData upgradeData)
@@ -50,10 +52,30 @@ public static class DataManager
     }
     #endregion
 
+    #region 사운드 데이터
+    public static void SaveSoundData(float bgm, float sfx)
+    {
+        PlayerPrefs.SetFloat(BGMSaveKey, bgm);
+        PlayerPrefs.SetFloat(SFXSaveKey, sfx);
+        PlayerPrefs.Save();
+    }
+
+    public static (float bgm, float sfx) LoadSoundData()
+    {
+        float bgm = PlayerPrefs.GetFloat(BGMSaveKey, 0.5f);
+        float sfx = PlayerPrefs.GetFloat(SFXSaveKey, 0.5f);
+
+        return (bgm, sfx);
+    }
+    #endregion
+
+
     public static void ResetAll()
     {
         PlayerPrefs.DeleteKey(UpgradeSaveKey);
         PlayerPrefs.DeleteKey(GoldSaveKey);
+        PlayerPrefs.DeleteKey(BGMSaveKey);
+        PlayerPrefs.DeleteKey(SFXSaveKey);
         PlayerPrefs.Save();
     }
 }

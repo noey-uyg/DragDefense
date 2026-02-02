@@ -38,6 +38,8 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         UpgradeManager.Instance.InitializeAllNodes();
         DataManager.LoadGoldData();
+        var (bgm, sfx) = DataManager.LoadSoundData();
+        SoundManager.Instance.SetVolume(bgm, sfx);
         OnLobby();
     }
 
