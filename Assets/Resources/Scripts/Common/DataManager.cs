@@ -21,6 +21,7 @@ public static class DataManager
     private const string GoldSaveKey = "Gold_Save_Key";
     private const string BGMSaveKey = "BGM_Save_Key";
     private const string SFXSaveKey = "SFX_Save_Key";
+    private const string LangSaveKey = "Lang_Save_Key";
 
     #region 업그레이드 데이터
     public static void SaveUpgradeData(UpgradeSaveData upgradeData)
@@ -69,6 +70,23 @@ public static class DataManager
     }
     #endregion
 
+    #region 언어 데이터
+    public static void SaveLanguageData(Language lang)
+    {
+        PlayerPrefs.SetInt(LangSaveKey, (int)lang);
+        PlayerPrefs.Save();
+    }
+
+    public static Language LoadLanguageData()
+    {
+        int defaultLang = (int)Language.ENG;
+
+        int langIndex = PlayerPrefs.GetInt(LangSaveKey, defaultLang);
+
+        return (Language)langIndex;
+    }
+
+    #endregion
 
     public static void ResetAll()
     {
@@ -76,6 +94,7 @@ public static class DataManager
         PlayerPrefs.DeleteKey(GoldSaveKey);
         PlayerPrefs.DeleteKey(BGMSaveKey);
         PlayerPrefs.DeleteKey(SFXSaveKey);
+        PlayerPrefs.DeleteKey(LangSaveKey);
         PlayerPrefs.Save();
     }
 }

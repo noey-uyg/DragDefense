@@ -1,3 +1,11 @@
+public class LocalizationData
+{
+    public string Key;
+    public string KOR;
+    public string ENG;
+    public string JPN;
+}
+
 public enum GameState 
 {
     None,
@@ -63,4 +71,11 @@ public enum SFXType
     Evt_MonsterHit,
     Evt_MonsterDie,
     Evt_CenterHit,
+}
+
+public enum Language
+{
+    ENG,
+    KOR,
+    JPN,
 }

@@ -39,7 +39,11 @@ public class GameManager : DontDestroySingleton<GameManager>
         UpgradeManager.Instance.InitializeAllNodes();
         DataManager.LoadGoldData();
         var (bgm, sfx) = DataManager.LoadSoundData();
+        Language saveLang = DataManager.LoadLanguageData();
+
         SoundManager.Instance.SetVolume(bgm, sfx);
+        LocalizationManager.Instance.ChangeLanguage(saveLang);
+
         OnLobby();
     }
 

@@ -8,6 +8,9 @@ public class SettingPopup : PopupBase
     [SerializeField] private TextMeshProUGUI _bgmVolumeText;
     [SerializeField] private Slider _sfxSlider;
     [SerializeField] private TextMeshProUGUI _sfxVolumeText;
+
+    [SerializeField] private TMP_Dropdown _languageDropdown;
+
     [SerializeField] private Button _saveButton;
 
     public void Init()
@@ -17,6 +20,8 @@ public class SettingPopup : PopupBase
 
         UpdateBGMText(_bgmSlider.value);
         UpdateSFXText(_sfxSlider.value);
+
+        InitLanguageDropDown();
 
         _bgmSlider.onValueChanged.RemoveAllListeners();
         _bgmSlider.onValueChanged.AddListener(val =>
@@ -37,8 +42,25 @@ public class SettingPopup : PopupBase
         {
             SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
             DataManager.SaveSoundData(_bgmSlider.value, _sfxSlider.value);
+            DataManager.SaveLanguageData((Language)_languageDropdown.value);
+            
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.SetGameState(GameState.Lobby);
+        });
+    }
+
+    private void InitLanguageDropDown()
+    {
+        if (_languageDropdown == null) return;
+
+        _languageDropdown.onValueChanged.RemoveAllListeners();
+
+        _languageDropdown.value = (int)LocalizationManager.Instance.CurLanguage;
+
+        _languageDropdown.onValueChanged.AddListener(index =>
+        {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            LocalizationManager.Instance.ChangeLanguage((Language)index);
         });
     }
 
