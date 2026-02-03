@@ -16,3 +16,43 @@ EARNED_GOLD,획득 골드,EARNED GOLD,獲得ゴールド
 TOTAL_GOLD,총 골드,TOTAL GOLD,合計ゴールド
 RETRY,재시도,RETRY,リトライ
 MAIN_MENU,메인 메뉴,MAIN MENU,メインメニュー
+NAME_CENTER_DEFENSE,방어력 증가,Defense Up,防御力アップ
+DESC_CENTER_DEFENSE,방어력 {0}증가,Defense +{0},防御力 +{0}
+NAME_CENTER_HP,체력 증가,Max HP Up,最大HPアップ
+DESE_CENTER_HP,체력 {0}증가,Max HP +{0},最大HP +{0}
+NAME_CIRCLE_ATK,공격력 증가,Attack Up,攻撃力アップ
+DESC_CIRCLE_ATK,공격력 {0}증가,Attack +{0},攻撃力 +{0}
+NAME_CIRCLE_ATKDELAY,공격 딜레이 감소,Attack Delay Reduction,攻撃ディレイ短縮
+DESC_CIRCLE_ATKDELAY,공격 딜레이 {0}s감소,Attack Delay -{0}s,攻撃ディレイ -{0}s
+NAME_CIRCLE_CRITICAL,크리티컬 확률 증가,Critical Chance Up,クリティカル率アップ
+DESC_CIRCLE_CRITICAL,크리티컬 확률 {0}%증가 ,Critical Chance +{0}%,クリティカル率 +{0}%
+NAME_CIRCLE_CRITICALDAM,크리티컬 데미지 증가,Critical Damage Up,クリティカルダメージアップ
+DESC_CIRCLE_CRITICALDAM,크리티컬 데미지 {0}x증가,Critical Damage +{0}x,クリティカルダメージ +{0}x
+NAME_CIRCLE_RADIUS,공격범위 증가,Attack Range Up,攻撃範囲アップ
+DESC_CIRCLE_RADIUS,공격범위 {0}증가,Attack Range +{0},攻撃範囲 +{0}
+NAME_CIRCLE_VAMPIRE,공격 시 HP회복 확률 증가,HP Recovery Chance on Hit Up,攻撃時HP回復確率アップ
+DESC_CIRCLE_VAMPIRE,공격 시 HP회복 확률 {0}증가,HP Recovery Chance on Hit +{0}%,攻撃時HP回復確率 +{0}%
+NAME_GOLD_BONUS_CHANCE,추가 골드 획득 확률 증가,Bonus Gold Chance Up,追加ゴールド獲得確率アップ
+DESC_GOLD_BONUS_CHANCE,추가 골드 획득 확률 {0}%증가,Bonus Gold Chance +{0}%,追加ゴールド獲得確率 +{0}%
+NAME_GOLD_GAIN,골드 획득량 증가,Gold Gain Up,ゴールド獲得量アップ
+DESC_GOLD_GAIN,골드 획득량 {0}%증가,Gold Gain +{0}%,ゴールド獲得量 +{0}%
+NAME_MONSTER_LEVEL,몬스터 레벨 증가,Monster Level Up,モンスターレベルアップ
+DESC_MONSTER_LEVEL,몬스터 레벨 {0}증가,Monster Level +{0},モンスターレベル +{0}
+NAME_PLAYTIME,게임 플레이 시간 증가,Play Time Up,プレイ時間アップ
+DESC_PLAYTIME,게임 플레이 시간 {0}증가,Play Time +{0},プレイ時間 +{0}
+NAME_SPAWNTIME,몬스터 스폰 시간 감소,Monster Spawn Time Reduction,モンスタースポーン時間短縮
+DESC_SPAWNTIME,몬스터 스폰 시간 {0}s감소,Monster Spawn Time -{0}s,モンスタースポーン時間 -{0}s
+NAME_BLAST,스킬: BLAST,Skill: BLAST,スキル：BLAST
+DESC_BLAST,스킬 BLAST 해금,Unlock BLAST,BLAST解放
+NAME_BLASTUP,BLAST 데미지 배율 증가,BLAST Damage Multiplier Up,BLASTダメージ倍率アップ
+DESC_BLASTUP,BLAST 데미지 배율 {0}x증가,BLAST Damage Multiplier +{0}x,BLASTダメージ倍率 +{0}x
+NAME_ORBITAL,스킬: ORBITAL,Skill: ORBITAL,スキル：ORBITAL
+DESC_ORBITAL,스킬 ORBITAL 해금,Unlock ORBITAL,ORBITAL解放
+NAME_ORBITALUP,ORBITAL 데미지 배율 증가,ORBITAL Damage Multiplier Up,ORBITALダメージ倍率アップ
+DESC_ORBITALUP,ORBITAL 데미지 배율 {0}x증가,ORBITAL Damage Multiplier +{0}x,ORBITALダメージ倍率 +{0}x
+NAME_SLASH,스킬: SLASH,Skill: SLASH,スキル：SLASH
+DESC_SLASH,스킬 SLASH 해금,Unlock SLASH,SLASH解放
+NAME_SLASHUP,SLASH 데미지 배율 증가,SLASH Damage Multiplier Up,SLASHダメージ倍率アップ
+DESC_SLASHUP,SLASH 데미지 배율 {0}x증가,SLASH Damage Multiplier +{0}x,SLASHダメージ倍率 +{0}x
+COST,가격 :,Cost :,価格 :
+CURRENCY,현재 :,Currency :,所持 :

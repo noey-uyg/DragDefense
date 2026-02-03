@@ -10,7 +10,7 @@ public class LocalizationManager : Singleton<LocalizationManager>
 
     public void Init()
     {
-        //SetDefaultLanguage();
+        SetDefaultLanguage();
     }
 
     public void ChangeLanguage(Language lang)

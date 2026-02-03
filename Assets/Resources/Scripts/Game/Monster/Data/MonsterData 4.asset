@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ddc556a241acd514ba8409f6e064201c, type: 3}
   monsterLevel: 4
   rewardGold: 9000
-  baseHP: 8000
+  baseHP: 14080
   baseAtk: 25
   baseSpeed: 2
   baseScale: 0.125

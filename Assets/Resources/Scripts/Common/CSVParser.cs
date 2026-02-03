@@ -50,6 +50,7 @@ public static class CSVParser
             UpgradeData data = new UpgradeData();
 
             data.Type = (UpgradeType)int.Parse(values[0]);
+            data.TypeInt = int.Parse(values[0]);
             data.ID = int.Parse(values[1]);
             data.Name = values[2];
             data.Description = values[3];

@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Xml;
 using UnityEditor;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 public static class PlayerStat
 {
     // [초기 수치]
     // [Game]
-    private const float BasePlayTime = 20f; // 게임 지속 시간 //최대 120
+    private const float BasePlayTime = 20f; // 게임 지속 시간 //최대 100
     private const float BaseGoldGainPercent = 1f; // 골드 획득량 배율 //최대 (10 = 1000%)
     private const float BaseSpawnTime = 1.5f; // 몬스터 스폰 시간 감소 //최대 0.25
     private const float BaseMonsterLevel = 0; // 등장 몬스터 레벨 증가 //최대 6
@@ -98,7 +100,6 @@ public static class PlayerStat
 
         CurMaxHP = BaseHP + UpgradedHP.Values.Sum();
         CurDamageReduction = BaseDamageReduction + UpgradedDefense.Values.Sum();
-        //_curGold = 9999999999999999;
 
         CurAtk = BaseAtk + UpgradedAtk.Values.Sum();
         CurAtkDelay = BaseAtkDelay + UpgradedAtkDelay.Values.Sum();
@@ -106,5 +107,33 @@ public static class PlayerStat
         CurCritical = BaseCritical + UpgradedCritical.Values.Sum();
         CurCriticalDam = BaseCriticalDam + UpgradedCiriticalDam.Values.Sum();
         CurVampire = BaseVampire + UpgradedVampire.Values.Sum();
+    }
+
+    public static string GetStatValue(UpgradeType type)
+    {
+        float value = 0;
+
+        switch (type)
+        {
+            case UpgradeType.GamePlayTime: value = CurPlayTime; break;
+            case UpgradeType.GameGoldGainPercent: value = CurGoldGainPercent; break;
+            case UpgradeType.GameSpawnTime: value = CurSpawnTime; break;
+            case UpgradeType.GameMonsterLevel: value = CurMonsterLevel; break;
+            case UpgradeType.GameGoldBonusChance: value = CurGoldBonusChance; break;
+
+            case UpgradeType.CenterHP: value = CurMaxHP; break;
+            case UpgradeType.CenterDefense: value = CurDamageReduction; break;
+
+            case UpgradeType.CircleAtk: value = CurAtk; break;
+            case UpgradeType.CircleAtkDelay: value = CurAtkDelay; break;
+            case UpgradeType.CircleRadius: value = CurRadius; break;
+            case UpgradeType.CircleCritical: value = CurCritical; break;
+            case UpgradeType.CircleCriticalDam: value = CurCritical; break;
+            case UpgradeType.CircleVampire: value = CurCriticalDam; break;
+
+            default: return "null";
+        }
+
+        return value.ToString("0.##");
     }
 }

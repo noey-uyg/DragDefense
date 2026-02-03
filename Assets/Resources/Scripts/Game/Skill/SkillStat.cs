@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public static class SkillStat
 {
@@ -57,5 +59,22 @@ public static class SkillStat
         }
 
         return 0;
+    }
+
+    public static string GetStatValue(UpgradeType type)
+    {
+        float value = 0;
+
+        switch (type)
+        {
+            case UpgradeType.SkillSlash: value = CurSlashMult; break;
+            case UpgradeType.SkillDeathBlast: value = CurDeathBlastMult; break;
+            case UpgradeType.SkillOrbital: value = CurOrbitalMult; break;
+            case UpgradeType.SkillLaser: value = CurLaserMult; break;
+
+            default: return "null";
+        }
+
+        return value.ToString("0.##");
     }
 }

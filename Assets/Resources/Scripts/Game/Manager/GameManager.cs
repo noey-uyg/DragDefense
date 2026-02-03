@@ -36,6 +36,8 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     private void Start()
     {
+        PlayerStat.RefreshStats();
+        SkillStat.RefreshSkillStats();
         UpgradeManager.Instance.InitializeAllNodes();
         DataManager.LoadGoldData();
         var (bgm, sfx) = DataManager.LoadSoundData();
@@ -87,6 +89,7 @@ public class GameManager : DontDestroySingleton<GameManager>
         MonsterManager.Instance.ClearAllMonsters();
         SpawnManager.Instance.ResetBossState();
         PlayerStat.RefreshStats();
+        SkillStat.RefreshSkillStats();
         SoundManager.Instance.PlayBGM(BGMType.Game);
 
         _center.gameObject.SetActive(true);

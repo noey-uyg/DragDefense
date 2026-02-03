@@ -20,6 +20,7 @@ public class MouseInputManager : Singleton<MouseInputManager>
 
     private void Update()
     {
+        if (GameManager.Instance.CurrentState != GameState.Playing) return;
         if (HandleTouchInput()) return;
         HandleMouse();
         SmoothFollow();

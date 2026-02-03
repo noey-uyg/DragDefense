@@ -14,7 +14,7 @@ public class TooltipManager : Singleton<TooltipManager>
         _canvasRectSize = _canvasRect.rect.size;
     }
 
-    public void ShowUpgradeTooltip(string title, string desc, string cost, int curLevel, int maxLevel, Vector2 position)
+    public void ShowUpgradeTooltip(string title, string desc, string curStat, string cost, int curLevel, int maxLevel, Vector2 position)
     {
         Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(_UICamera, position);
 
@@ -24,7 +24,7 @@ public class TooltipManager : Singleton<TooltipManager>
             _UICamera,
             out Vector2 localPos);
 
-        _upgradeTooltip.Show(title, desc, cost, curLevel, maxLevel, localPos, _canvasRectSize);
+        _upgradeTooltip.Show(title, desc, curStat, cost, curLevel, maxLevel, localPos, _canvasRectSize);
     }
 
     public void HideTooltip()

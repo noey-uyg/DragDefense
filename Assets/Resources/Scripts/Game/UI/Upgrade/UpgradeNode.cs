@@ -10,6 +10,7 @@ public class UpgradeData
 {
     [Header("Info")]
     public UpgradeType Type;
+    public int TypeInt;
     public int ID;
     public string Name;
     [TextArea(3, 5)] public string Description;
@@ -111,11 +112,15 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         bool isMax = _upgradeData.level >= _upgradeData.MaxLevel;
 
+        string currentStat = _upgradeData.TypeInt >= 1000 ? SkillStat.GetStatValue(_upgradeData.Type) : PlayerStat.GetStatValue(_upgradeData.Type);
+
         string costStr = isMax ?
-            "<color=red>(Max)</color>" :
+            "<color=red>Max</color>" :
             CurrencyFomatter.FormatBigInt(_upgradeData.GetCurrentCost());
 
-        string finalDesc = _upgradeData.Description;
+        string localizedName = LocalizationManager.Instance.GetText(_upgradeData.Name);
+
+        string finalDesc;
         float curTotalValue = _upgradeData.Value[_upgradeData.level];
 
         if (!isMax)
@@ -123,16 +128,17 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             float nextTotalValue = _upgradeData.Value[_upgradeData.level + 1];
             float additionalValue = nextTotalValue - curTotalValue;
 
-            finalDesc = string.Format(_upgradeData.Description, additionalValue.ToString("0.##"));
+            finalDesc = LocalizationManager.Instance.GetFormatText(_upgradeData.Description, additionalValue.ToString("0.##"));
         }
         else
         {
-            finalDesc = string.Format(_upgradeData.Description, 0);
+            finalDesc = LocalizationManager.Instance.GetFormatText(_upgradeData.Description, 0);
         }
 
         TooltipManager.Instance.ShowUpgradeTooltip(
-            _upgradeData.Name,
+            localizedName,
             finalDesc,
+            currentStat,
             costStr,
             _upgradeData.level,
             _upgradeData.MaxLevel,

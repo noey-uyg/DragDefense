@@ -6,17 +6,19 @@ public class UpgradeTooltip : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _descText;
+    [SerializeField] private TextMeshProUGUI _currencyText;
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private float _offsetY = 60f;
 
-    public void Show(string title, string desc, string cost, int curLevel, int maxLevel, Vector2 position, Vector2 canvasSize)
+    public void Show(string title, string desc, string curStat, string cost, int curLevel, int maxLevel, Vector2 position, Vector2 canvasSize)
     {
         gameObject.SetActive(true);
         _titleText.text = title;
         _descText.text = desc;
-        _costText.text = $"Cost : {cost}";
+        _currencyText.text = curStat;
+        _costText.text = cost;
         _levelText.text = $"Lv. {curLevel} / {maxLevel}";
 
         _rectTransform.anchoredPosition = position + new Vector2(0, _offsetY);
