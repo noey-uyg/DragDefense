@@ -36,17 +36,33 @@ public class GameManager : DontDestroySingleton<GameManager>
 
     private void Start()
     {
+        Init();
+        OnLobby();
+    }
+    
+    private void Init()
+    {
+        InitStatRefresh();
+        InitLoadData();
+    }
+
+    private void InitStatRefresh()
+    {
         PlayerStat.RefreshStats();
         SkillStat.RefreshSkillStats();
         UpgradeManager.Instance.InitializeAllNodes();
+    }
+
+    private void InitLoadData()
+    {
         DataManager.LoadGoldData();
+
         var (bgm, sfx) = DataManager.LoadSoundData();
-        Language saveLang = DataManager.LoadLanguageData();
-
         SoundManager.Instance.SetVolume(bgm, sfx);
-        LocalizationManager.Instance.ChangeLanguage(saveLang);
 
-        OnLobby();
+        Language saveLang = DataManager.LoadLanguageData();
+        if (saveLang == Language.None) LocalizationManager.Instance.SetDefaultLanguage();
+        else LocalizationManager.Instance.ChangeLanguage(saveLang);
     }
 
     public void SetGameState(GameState state)

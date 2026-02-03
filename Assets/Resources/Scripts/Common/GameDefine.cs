@@ -75,6 +75,7 @@ public enum SFXType
 
 public enum Language
 {
+    None = -1,
     ENG,
     KOR,
     JPN,

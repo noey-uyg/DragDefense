@@ -32,6 +32,8 @@ public class MonsterManager : Singleton<MonsterManager>
 
         SkillManager.Instance.SkillProcess(dt);
 
+        if (Input.GetKeyDown(KeyCode.K)) DataManager.ResetAll();
+
         if (canAttack)
         {
             _circle.PlayAttackMotion();

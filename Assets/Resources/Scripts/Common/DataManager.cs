@@ -79,9 +79,7 @@ public static class DataManager
 
     public static Language LoadLanguageData()
     {
-        int defaultLang = (int)Language.ENG;
-
-        int langIndex = PlayerPrefs.GetInt(LangSaveKey, defaultLang);
+        int langIndex = PlayerPrefs.GetInt(LangSaveKey, (int)Language.None);
 
         return (Language)langIndex;
     }
