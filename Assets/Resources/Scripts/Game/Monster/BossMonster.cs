@@ -19,6 +19,7 @@ public class BossMonster : BaseMonster
 
     public override void Die(bool isKillByPlayer)
     {
+        MonsterManager.Instance.Unregister(this);
         _deadAction?.Invoke(this);
 
         if (isKillByPlayer)
@@ -29,6 +30,5 @@ public class BossMonster : BaseMonster
             GameManager.Instance.SetGameState(GameState.GameOver);
         }
         MonsterPool.Instance.ReleaseBossMonster(this);
-        MonsterManager.Instance.Unregister(this);
     }
 }

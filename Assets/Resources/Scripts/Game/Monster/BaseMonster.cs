@@ -60,6 +60,7 @@ public class BaseMonster : MonoBehaviour
         moveDir = moveDir.normalized;
 
         Vector2 nextPos = currentPos + moveDir * _realSpeed * deltaTime;
+        
         _transform.position = nextPos;
     }
 
@@ -79,7 +80,7 @@ public class BaseMonster : MonoBehaviour
         _realSpeed = data.baseSpeed;
         _rewardGold = data.rewardGold;
 
-        if(_flashCoroutine != null)
+        if (_flashCoroutine != null)
         {
             StopCoroutine(_flashCoroutine);
             _flashCoroutine = null;
@@ -144,6 +145,7 @@ public class BaseMonster : MonoBehaviour
 
     public virtual void Die(bool isKillByPlayer)
     {
+        MonsterManager.Instance.Unregister(this);
         _deadAction?.Invoke(this);
 
         if (isKillByPlayer)
@@ -152,9 +154,8 @@ public class BaseMonster : MonoBehaviour
             SpawnGoldFlyEffects();
             GetGold();
         }
-
+        if (_flashCoroutine != null) StopCoroutine(_flashCoroutine);
         MonsterPool.Instance.ReleaseNormalMonster(this);
-        MonsterManager.Instance.Unregister(this);
     }
 
     protected void GetGold()

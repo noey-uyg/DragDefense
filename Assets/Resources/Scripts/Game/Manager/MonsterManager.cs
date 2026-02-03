@@ -9,7 +9,15 @@ public class MonsterManager : Singleton<MonsterManager>
 
     private Vector2 _targetPosition = Vector2.zero;
 
-    public void Register(BaseMonster monster) => _monsters.Add(monster);
+    public void Register(BaseMonster monster)
+    {
+        if (_monsters.Contains(monster))
+        {
+            _monsters.Remove(monster);
+        }
+        _monsters.Add(monster);
+    }
+
     public void Unregister(BaseMonster monster) => _monsters.Remove(monster);
 
     private void Update()
