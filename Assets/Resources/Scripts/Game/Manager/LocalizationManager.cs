@@ -56,6 +56,8 @@ public class LocalizationManager : Singleton<LocalizationManager>
             case SystemLanguage.Japanese: _curLanguage = Language.JPN;break;
             default: _curLanguage = Language.ENG; break;
         }
+
+        DataManager.SaveLanguageData(_curLanguage);
     }
 
     public void RegisterLanguageEvent(Action callback)
