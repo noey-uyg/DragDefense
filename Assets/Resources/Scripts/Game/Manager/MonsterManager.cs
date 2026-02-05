@@ -33,6 +33,7 @@ public class MonsterManager : Singleton<MonsterManager>
         SkillManager.Instance.SkillProcess(dt);
 
         if (Input.GetKeyDown(KeyCode.K)) DataManager.ResetAll();
+        if (Input.GetKeyDown(KeyCode.C)) PlayerStat.CurGold += 999999999;
 
         if (canAttack)
         {
