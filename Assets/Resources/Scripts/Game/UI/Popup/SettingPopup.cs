@@ -10,6 +10,10 @@ public class SettingPopup : PopupBase
     [SerializeField] private TextMeshProUGUI _sfxVolumeText;
 
     [SerializeField] private TMP_Dropdown _languageDropdown;
+    [SerializeField] private TMP_Dropdown _resolutionDropdown;
+
+    [SerializeField] private Toggle _fullScreenToggle;
+    [SerializeField] private Toggle _windowedToggle;
 
     [SerializeField] private Button _saveButton;
 
@@ -22,6 +26,8 @@ public class SettingPopup : PopupBase
         UpdateSFXText(_sfxSlider.value);
 
         InitLanguageDropDown();
+        InitResolutionDropDown();
+        InitScreenModeToggles();
 
         _bgmSlider.onValueChanged.RemoveAllListeners();
         _bgmSlider.onValueChanged.AddListener(val =>
@@ -41,9 +47,11 @@ public class SettingPopup : PopupBase
         _saveButton.onClick.AddListener(() =>
         {
             SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            
             DataManager.SaveSoundData(_bgmSlider.value, _sfxSlider.value);
             DataManager.SaveLanguageData((Language)_languageDropdown.value);
-            
+            DataManager.SaveScreenData(_resolutionDropdown.value, ScreenManager.Instance.IsFull);
+
             PopupManager.Instance.HideTopPopup();
             GameManager.Instance.SetGameState(GameState.Lobby);
         });
@@ -61,6 +69,49 @@ public class SettingPopup : PopupBase
         {
             SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
             LocalizationManager.Instance.ChangeLanguage((Language)index);
+        });
+    }
+
+    private void InitResolutionDropDown()
+    {
+        if (_resolutionDropdown == null) return;
+
+        _resolutionDropdown.onValueChanged.RemoveAllListeners();
+
+        _resolutionDropdown.value = ScreenManager.Instance.CurResIndex;
+
+        _resolutionDropdown.onValueChanged.AddListener(index =>
+        {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            ScreenManager.Instance.SetResolution(index);
+        });
+    }
+
+
+    private void InitScreenModeToggles()
+    {
+        bool isFull = ScreenManager.Instance.IsFull;
+        _fullScreenToggle.isOn = isFull;
+        _windowedToggle.isOn = !isFull;
+
+        _fullScreenToggle.onValueChanged.RemoveAllListeners();
+        _fullScreenToggle.onValueChanged.AddListener(isOn =>
+        {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            if (isOn)
+            {
+                ScreenManager.Instance.SetScreenMode(true);
+            }
+        });
+
+        _windowedToggle.onValueChanged.RemoveAllListeners();
+        _windowedToggle.onValueChanged.AddListener(isOn =>
+        {
+            SoundManager.Instance.PlaySFX(SFXType.UI_ButtonClick);
+            if (isOn)
+            {
+                ScreenManager.Instance.SetScreenMode(false);
+            }
         });
     }
 

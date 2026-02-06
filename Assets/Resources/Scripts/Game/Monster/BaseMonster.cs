@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Threading;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

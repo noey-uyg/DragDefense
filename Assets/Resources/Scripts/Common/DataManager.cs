@@ -22,6 +22,8 @@ public static class DataManager
     private const string BGMSaveKey = "BGM_Save_Key";
     private const string SFXSaveKey = "SFX_Save_Key";
     private const string LangSaveKey = "Lang_Save_Key";
+    private const string ResIndexSaveKey = "Res_Index_Save_Key";
+    private const string IsFullSaveKey = "Is_Full_Save_Key";
 
     #region 업그레이드 데이터
     public static void SaveUpgradeData(UpgradeSaveData upgradeData)
@@ -86,6 +88,24 @@ public static class DataManager
 
     #endregion
 
+    #region 화면 설정 데이터
+    public static void SaveScreenData(int resIndex, bool isFull)
+    {
+        PlayerPrefs.SetInt(ResIndexSaveKey, resIndex);
+        PlayerPrefs.SetInt(IsFullSaveKey, isFull ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    public static (int resIndex, bool isFull) LoadScreenData()
+    {
+        int resIndex = PlayerPrefs.GetInt(ResIndexSaveKey, 1);
+        bool isFull = PlayerPrefs.GetInt(IsFullSaveKey, 1) == 1;
+
+        return (resIndex, isFull);
+    }
+
+    #endregion
+
     public static void ResetAll()
     {
         PlayerPrefs.DeleteKey(UpgradeSaveKey);
@@ -93,6 +113,9 @@ public static class DataManager
         PlayerPrefs.DeleteKey(BGMSaveKey);
         PlayerPrefs.DeleteKey(SFXSaveKey);
         PlayerPrefs.DeleteKey(LangSaveKey);
+        PlayerPrefs.DeleteKey(ResIndexSaveKey);
+        PlayerPrefs.DeleteKey(IsFullSaveKey);
+
         PlayerPrefs.Save();
     }
 }

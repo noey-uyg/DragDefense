@@ -58,6 +58,10 @@ public class GameManager : DontDestroySingleton<GameManager>
     {
         DataManager.LoadGoldData();
 
+        var (resIndex, isFull) = DataManager.LoadScreenData();
+        ScreenManager.Instance.SetScreenMode(isFull);
+        ScreenManager.Instance.SetResolution(resIndex);
+
         var (bgm, sfx) = DataManager.LoadSoundData();
         SoundManager.Instance.SetVolume(bgm, sfx);
 
