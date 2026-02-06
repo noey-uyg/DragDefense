@@ -45,6 +45,9 @@ public static class SkillStat
         CurOrbitalMult = BaseOrbitalMult + UpgradedOrbital.Values.Sum();
         CurLaserMult = BaseLaserMult + UpgradedLaser.Values.Sum();
 
+        SkillLevels[UpgradeType.SkillOrbital] = 1;
+        SkillLevels[UpgradeType.SkillDeathBlast] = 1;
+        SkillLevels[UpgradeType.SkillSlash] = 1;
     }
 
     public static bool IsUnlocked(UpgradeType type)

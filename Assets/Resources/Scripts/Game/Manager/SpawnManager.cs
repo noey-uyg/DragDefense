@@ -15,7 +15,7 @@ public class SpawnManager : Singleton<SpawnManager>
     private float _playTime = 0f;
     private bool _hasBossSpawn;
 
-    private const float _bossAppearTime = 70f;
+    private const float _bossAppearTime = 10f;
     private const int _bossAppearLevel = 6;
 
     private readonly Dictionary<int, int[]> _weightTable = new Dictionary<int, int[]>()

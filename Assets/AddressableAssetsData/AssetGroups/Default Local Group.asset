@@ -20,6 +20,36 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 168e1d49404b0464ebd75843fdcf2579
+    m_Address: Blast
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fd2749f2a4056446881dce86ed70c39
+    m_Address: CFXR4 Sword Hit FIRE Cross
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26e1cb216e3635e4a820f58a1118d6b9
+    m_Address: CFXR _BOSS_
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 328ff18803bf7714a94f9f7c02bab6dd
+    m_Address: Orbital
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57a776ff377f3c44e8403e2067a4d41f
+    m_Address: CFXR4 Sword Trail FIRE 360
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60e0243b629fce045aa9a88557f9becc
+    m_Address: NormalMonster
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66e4b6162b415fd478bf338387faf767
     m_Address: UI_GridComponents_Atlas
     m_ReadOnly: 0
@@ -27,6 +57,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 79a3e90eee204f144a5cef7215b94a94
     m_Address: CSV/UpgradeData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bd55a02e484de44d97fc43fa3cbb17a
+    m_Address: GoldEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa2e33ede67209f47a66431cdab44f9b
+    m_Address: TextEffect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adfb864429210994fa7b3e098be08032
+    m_Address: BossMonster
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
