@@ -68,7 +68,9 @@ public class BaseMonster : MonoBehaviour
     {
         _monsterData = data;
         _monsterID = data.monsterID;
-        _spriteRenderer.sprite = data.sprite;
+
+        Sprite sprite = SpriteAtlasManager.Instance.GetSprite("Monsters_Atlas", data.sprite.name);
+        _spriteRenderer.sprite = sprite;
         _spriteRenderer.material = _originMaterial;
         _spriteRenderer.sortingOrder = data.monsterLevel;
 
