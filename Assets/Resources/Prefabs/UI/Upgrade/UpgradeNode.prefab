@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeNode
   _upgradeData:
     Type: 104
+    TypeInt: 0
     ID: 1010
     Name: Monter Level
     Description: "\uBAAC\uC2A4\uD130 \uB808\uBCA8 \uC99D\uAC00"

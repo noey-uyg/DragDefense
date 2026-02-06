@@ -42,7 +42,7 @@ public class GameManager : DontDestroySingleton<GameManager>
     
     private void Init()
     {
-        //InitStatRefresh();
+        InitStatRefresh();
         InitLoadData();
     }
 
