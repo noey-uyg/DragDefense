@@ -63,10 +63,10 @@ public class EffectPool : Singleton<EffectPool>
     {
         if(!_pools.ContainsKey(type)) return null;
 
-        var pool = _pools[type];
+        var pool = _pools[type] as ObjectPool<ParticleSystem>;
         var entry = _effectEntries.Find(x => x.type == type);
 
-        if (pool.CountInactive > entry.maxSize) return null;
+        if (pool.CountAll > entry.maxSize) return null;
 
         return pool.Get();
     }
