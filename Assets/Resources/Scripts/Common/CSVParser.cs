@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System.Numerics;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public static class CSVParser
 {
@@ -10,28 +13,37 @@ public static class CSVParser
     public static Dictionary<int, UpgradeData> UpgradeDataDict = new Dictionary<int, UpgradeData>();
     public static Dictionary<string, LocalizationData> LocalizeDict = new Dictionary<string, LocalizationData>();
 
-    public static void AllCSVLoad()
+    public static async Task AllCSVLoad()
     {
-        LoadUpgradeData();
-        LoadLocalizationData();
+        await Task.WhenAll(
+            LoadUpgradeData(),
+            LoadLocalizationData()
+            );
     }
 
-    private static string LoadCSV(string path)
+    private static async Task<string> LoadCSV(string path)
     {
-        TextAsset asset = Resources.Load<TextAsset>(path);
-        if(asset == null)
+        var asset = Addressables.LoadAssetAsync<TextAsset>(path);
+        await asset.Task;
+
+        if(asset.Status == AsyncOperationStatus.Succeeded)
         {
-            Debug.LogError($"CSV 파일을 찾을 수 없음 {path}");
+            string text = asset.Result.text;
+
+            Addressables.Release(asset);
+            return text;
+        }
+        else
+        {
+            Debug.LogWarning($"Not file : {path}");
             return string.Empty;
         }
-
-        return asset.text;
     }
 
     #region 업그레이드 데이터
-    private static void LoadUpgradeData()
+    private static async Task LoadUpgradeData()
     {
-        var csv = LoadCSV(UpgradeDataPath);
+        var csv = await LoadCSV(UpgradeDataPath);
 
         if (string.IsNullOrEmpty(csv)) return;
 
@@ -80,9 +92,9 @@ public static class CSVParser
     #endregion
 
     #region 로컬라이징 데이터
-    private static void LoadLocalizationData()
+    private static async Task LoadLocalizationData()
     {
-        var csv = LoadCSV(LocalizationDataPath);
+        var csv = await LoadCSV(LocalizationDataPath);
 
         if (string.IsNullOrEmpty(csv)) return;
         

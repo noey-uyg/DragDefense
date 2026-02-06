@@ -31,11 +31,12 @@ public class GameManager : DontDestroySingleton<GameManager>
 
         DOTween.Init(true, true, LogBehaviour.ErrorsOnly);
         DOTween.SetTweensCapacity(500, 50);
-        CSVParser.AllCSVLoad();
     }
 
-    private void Start()
+    private async void Start()
     {
+        await CSVParser.AllCSVLoad();
+
         Init();
         OnLobby();
     }

@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: 44b59ce5c85b5614284e1914c1176300
+  m_SerializeEntries:
+  - m_GUID: 11bba4feb47f2df449ad2878cc725027
+    m_Address: UI_Containers_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66e4b6162b415fd478bf338387faf767
+    m_Address: UI_GridComponents_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79a3e90eee204f144a5cef7215b94a94
+    m_Address: CSV/UpgradeData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b77151ac5cd81de489091ade3b91cde6
+    m_Address: UI_SetMenu_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccdf1cefa0b0fc341aaf7c327ae04de1
+    m_Address: UI_Buttons_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7e49d19ab7370d4b8799932fccb2611
+    m_Address: CSV/LocalizationData
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee15bef9cd5f01944a08b40eb2ac3f95
+    m_Address: UI_Icon128_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5513c0daf51026498428fa412bdc25a
+    m_Address: UI_Icon64_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fca3976c240aa0741a53d5671b6eff9d
+    m_Address: Monsters_Atlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 27fa11db4493afa40b9215f494997def, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 25f04c3c9781ada42a479ec534f1f062, type: 2}
+    - {fileID: 11400000, guid: 9d0e2e2533be6284c982fcfcb6c0a845, type: 2}
