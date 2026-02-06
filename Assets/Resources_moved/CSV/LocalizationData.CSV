@@ -56,3 +56,6 @@ NAME_SLASHUP,SLASH 데미지 배율 증가,SLASH Damage Multiplier Up,SLASHダ�
 DESC_SLASHUP,SLASH 데미지 배율 {0}x증가,SLASH Damage Multiplier +{0}x,SLASHダメージ倍率 +{0}x
 COST,가격 :,Cost :,価格 :
 CURRENCY,현재 :,Currency :,所持 :
+SCREEN,해상도,Res,解像度
+FULLSCREEN,전체화면,Full,フル
+WINDOWEDSCREEN,창모드,Windowed,ウィンドウ
