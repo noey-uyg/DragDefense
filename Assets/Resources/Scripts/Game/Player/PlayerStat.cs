@@ -128,8 +128,8 @@ public static class PlayerStat
             case UpgradeType.CircleAtkDelay: value = CurAtkDelay; break;
             case UpgradeType.CircleRadius: value = CurRadius; break;
             case UpgradeType.CircleCritical: value = CurCritical; break;
-            case UpgradeType.CircleCriticalDam: value = CurCritical; break;
-            case UpgradeType.CircleVampire: value = CurCriticalDam; break;
+            case UpgradeType.CircleCriticalDam: value = CurCriticalDam; break;
+            case UpgradeType.CircleVampire: value = CurVampire; break;
 
             default: return "null";
         }
